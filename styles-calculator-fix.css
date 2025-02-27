@@ -1,0 +1,44 @@
+/* Fix pro kalkulačku v detailu apartmánu */
+.apartment-right-column .investment-calc {
+    max-width: none;
+    width: 100%;
+}
+
+.calc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--color-text);
+    padding: 4px 0;
+    flex-wrap: wrap;
+}
+
+.calc-item .label {
+    color: var(--color-text);
+    margin-right: 10px;
+    flex: 1;
+}
+
+.calc-item .value {
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: right;
+    min-width: 120px;
+}
+
+.investment-calc {
+    max-width: 500px;
+}
+
+/* Oprava pro příjmy z pronájmu */
+.display-debug {
+    display: inline-block !important; 
+    visibility: visible !important;
+    color: #cc0000 !important; /* červené zvýraznění pro ladění */
+    font-weight: bold !important;
+    min-width: 120px !important;
+    background-color: rgba(255, 240, 240, 0.5) !important;
+    border: 1px solid #cc0000 !important;
+    padding: 2px 5px !important;
+}

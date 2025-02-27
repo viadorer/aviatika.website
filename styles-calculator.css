@@ -1,0 +1,251 @@
+/* Speciální styly pro investiční kalkulačku */
+
+.investment-calculator-section {
+    padding: var(--section-spacing) 0;
+    background-color: var(--color-bg-light);
+}
+
+.calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.calculator-inputs {
+    padding: 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    border-radius: var(--border-radius);
+    height: fit-content;
+}
+
+.calculator-inputs h4 {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calculator-inputs .input-group {
+    margin-bottom: 1.5rem;
+}
+
+.calculator-inputs label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.calculator-inputs input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.calculator-inputs input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(45, 90, 75, 0.2);
+}
+
+.calculator-inputs .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.calculator-results {
+    padding: 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    border-radius: var(--border-radius);
+}
+
+.calculator-results h4 {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.results-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.results-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.results-section h5 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.calc-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem 0;
+}
+
+.calc-item .label {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.calc-item .value {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.calc-item.highlight {
+    background: rgba(45, 90, 75, 0.1);
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius-sm);
+    margin: 1rem 0;
+}
+
+.calc-item.highlight .label {
+    font-weight: 600;
+    color: var(--color-primary-dark);
+}
+
+.calc-item.highlight .value {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.calculator-explanation {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    border-radius: var(--border-radius);
+}
+
+.calculator-explanation h4 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.calculator-explanation ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.calculator-explanation li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.calculator-explanation li:before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Tlačítko zájmu */
+.interest-button-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.interest-button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.interest-button:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.interest-button i {
+    font-size: 1.2rem;
+}
+
+.btn-large {
+    padding: 1.2rem 2.5rem;
+    font-weight: 600;
+}
+
+/* Styly pro logo PTF Reality ve footeru */
+.ptf-logo {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ptf-logo-img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.ptf-logo-text {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* Responzivní design */
+@media (max-width: 992px) {
+    .calculator-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .calculator-inputs {
+        order: 1;
+    }
+    
+    .calculator-results {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .calc-item {
+        flex-direction: column;
+        margin-bottom: 1.2rem;
+    }
+    
+    .calc-item .label {
+        margin-bottom: 0.3rem;
+    }
+}

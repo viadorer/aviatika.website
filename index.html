@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviatika - Luxusní horské apartmány Kovářská</title>
+    
+    <!-- Styly -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-benefits.css">
+    <link rel="stylesheet" href="styles-calculator.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Leaflet.js pro mapy -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Vlastní skripty -->
+    <script src="js/main.js" defer></script>
+    <script src="js/investment-calculator.js" defer></script>
+</head>
+<body>
+    <!-- Navigace -->
+    <nav class="navbar glass-nav">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <div class="logo-text">
+                    <span class="logo-main">AVIATIKA</span>
+                    <span class="logo-separator">&nbsp;|&nbsp;</span>
+                    <span class="logo-sub">horské apartmány</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">O projektu</a>
+                <a href="#apartments" class="nav-link">Apartmány</a>
+                <a href="#gallery" class="nav-link">Galerie</a>
+                <a href="#location" class="nav-link">Lokalita</a>
+                <a href="#investment" class="nav-link">Investice</a>
+                <a href="investicni-kalkulacka.html" class="nav-link">Investiční kalkulačka</a>
+                <a href="#contact" class="nav-link contact-btn">Kontakt</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero sekce -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="images/KOVARSKA_byt 13 002b ve velké velikosti.png" alt="Luxusní apartmány Kovařská" class="hero-image">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                   
+                    <h1 class="hero-title">Luxusní horské apartmány<br>v srdci Krušných hor</h1>
+                    <p class="hero-subtitle">Objevte výjimečné bydlení s panoramatickým výhledem<br>na nejkrásnější část Krušných hor</p>
+                    <div class="hero-buttons">
+                        <a href="#apartments" class="btn btn-primary glass-btn">Prohlédnout apartmány</a>
+                        <a href="#contact" class="btn btn-outline glass-btn btn-pill">Kontaktovat nás</a>
+                    </div>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-badge"><i class="fas fa-mountain"></i></div>
+                        <div class="feature-icon mountain"></div>
+                        <h3>Panoramatický výhled</h3>
+                        <p>Dechberoucí výhledy na Krušné hory</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-badge"><i class="fas fa-skiing"></i></div>
+                        <div class="feature-icon ski"></div>
+                        <h3>Ski Resort</h3>
+                        <p>5 minut chůze na sjezdovku</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon-badge"><i class="fas fa-home"></i></div>
+                        <div class="feature-icon home"></div>
+                        <h3>Moderní design</h3>
+                        <p>Luxusní vybavení a materiály</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O projektu -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content glass-card">
+                <div class="about-text">
+                    <h2>Moderní bydlení v horském stylu</h2>
+                    <p class="lead">Luxusní apartmány navržené pro váš komfort</p>
+                    <p>Každý detail našich apartmánů byl pečlivě navržen s důrazem na moderní design a funkčnost. Prvotřídní materiály nejvyšší kvality a nadčasový design vytváří dokonalý prostor pro váš horský domov.</p>
+                    <ul class="feature-list">
+                        <li><span class="check-mark"></span>Luxusní vybavení</li>
+                        <li><span class="check-mark"></span>Inteligentní systém vytápění</li>
+                        <li><span class="check-mark"></span>Podzemní parkování</li>
+                        <li><span class="check-mark"></span>Lyžárna a kolovna</li>
+                    </ul>
+                </div>
+                <div class="about-gallery">
+                    <img src="images/KOVARSKA_byt 13 001 ve velké velikosti.png" alt="Interiér apartmánu" class="gallery-main">
+                    <div class="gallery-grid">
+                        <img src="images/KOVARSKA_byt 13 002 ve velké velikosti.png" alt="Interiér apartmánu">
+                        <img src="images/KOVARSKA_byt 13 003 ve velké velikosti.png" alt="Interiér apartmánu">
+                        <img src="images/KOVARSKA_byt 13 004 ve velké velikosti.png" alt="Interiér apartmánu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartmány -->
+    <section id="apartments" class="apartments-section">
+        <div class="container">
+            <h2 class="section-title">Vyberte si svůj apartmán</h2>
+            <p class="section-subtitle">Nabízíme různé velikosti apartmánů pro všechny vaše potřeby</p>
+            
+            <div class="apartment-list">
+                <!-- 1+kk -->
+                <div class="apartment-item glass-card">
+                    <div class="apartment-header">
+                        <h3>1+kk Apartmán</h3>
+                        <div class="price">od 2 990 000 Kč</div>
+                    </div>
+                    <div class="apartment-content">
+                        <div class="apartment-details">
+                            <div class="apartment-info">
+                                <p class="lead">Ideální pro jednotlivce nebo páry hledající komfortní horské bydlení. Moderní a účelně řešený prostor s důrazem na kvalitu a pohodlí.</p>
+                                
+                                <div class="features-section">
+                                    <h4>Dispozice a prostor</h4>
+                                    <ul class="apartment-features">
+                                        <li><i class="fas fa-expand"></i>45 m² užitné plochy</li>
+                                        <li><i class="fas fa-door-open"></i>Vstupní chodba se šatnou</li>
+                                        <li><i class="fas fa-couch"></i>Obývací pokoj s kuchyňským koutem</li>
+                                        <li><i class="fas fa-bath"></i>Koupelna s WC</li>
+                                    </ul>
+                                </div>
+
+                                <div class="features-section">
+                                    <h4>Vybavení v ceně</h4>
+                                    <ul class="apartment-features">
+                                        <li><i class="fas fa-utensils"></i>Moderní kuchyňská linka se spotřebiči</li>
+                                        <li><i class="fas fa-temperature-low"></i>Podlahové topení</li>
+                                        <li><i class="fas fa-parking"></i>Vyhrazené parkovací stání</li>
+                                        <li><i class="fas fa-box"></i>Sklep v ceně</li>
+                                    </ul>
+                                </div>
+
+                                <div class="apartment-cta">
+                                    <div class="cta-columns">
+                                        <div class="cta-column">
+                                            <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Mám zájem</a>
+                                        </div>
+                                        <div class="cta-column">
+                                            <a href="#contact" class="btn btn-outline"><i class="fas fa-phone"></i>Zavolejte mi</a>
+                                        </div>
+                                    </div>
+                                    <div class="energy-label">Energetická třída: A</div>
+                                </div>
+                            </div>
+                            <div class="apartment-image">
+                                <img src="images/KOVARSKA_byt 10 01 ve velké velikosti.png" alt="1+kk Apartmán">
+                                <div class="image-badges">
+                                    <span class="badge">Ihned k nastěhování</span>
+                                    <span class="badge">Výhled na hory</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 2+kk -->
+                <div class="apartment-item glass-card">
+                    <div class="apartment-header">
+                        <h3>2+kk Apartmán</h3>
+                        <div class="price">od 4 490 000 Kč</div>
+                    </div>
+                    <div class="apartment-content">
+                        <div class="apartment-details">
+                            <div class="apartment-info">
+                                <p class="lead">Prostorný apartmán s oddělenou ložnicí a velkým obývacím prostorem. Ideální pro rodiny nebo ty, kteří ocení více prostoru pro relaxaci.</p>
+                                
+                                <div class="features-section">
+                                    <h4>Dispozice a prostor</h4>
+                                    <ul class="apartment-features">
+                                        <li><i class="fas fa-expand"></i>65 m² užitné plochy</li>
+                                        <li><i class="fas fa-door-open"></i>Vstupní chodba se šatnou</li>
+                                        <li><i class="fas fa-bed"></i>Samostatná ložnice</li>
+                                        <li><i class="fas fa-couch"></i>Prostorný obývací pokoj s kuchyňským koutem</li>
+                                        <li><i class="fas fa-bath"></i>Koupelna s WC</li>
+                                    </ul>
+                                </div>
+
+                                <div class="features-section">
+                                    <h4>Vybavení v ceně</h4>
+                                    <ul class="apartment-features">
+                                        <li><i class="fas fa-utensils"></i>Moderní kuchyňská linka se spotřebiči</li>
+                                        <li><i class="fas fa-temperature-low"></i>Podlahové topení</li>
+                                        <li><i class="fas fa-parking"></i>Vyhrazené parkovací stání</li>
+                                        <li><i class="fas fa-box"></i>Sklep v ceně</li>
+                                    </ul>
+                                </div>
+
+                                <div class="apartment-cta">
+                                    <div class="cta-columns">
+                                        <div class="cta-column">
+                                            <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Mám zájem</a>
+                                        </div>
+                                        <div class="cta-column">
+                                            <a href="#contact" class="btn btn-outline"><i class="fas fa-phone"></i>Zavolejte mi</a>
+                                        </div>
+                                    </div>
+                                    <div class="energy-label">Energetická třída: A</div>
+                                </div>
+                            </div>
+                            <div class="apartment-image">
+                                <img src="images/KOVARSKA_byt 4 a 8 001 ve velké velikosti.png" alt="2+kk Apartmán">
+                                <div class="image-badges">
+                                    <span class="badge">Výhled na hory</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3+kk -->
+                <div class="apartment-item glass-card">
+                    <div class="apartment-header">
+                        <h3>3+kk Apartmán</h3>
+                        <div class="price">od 6 990 000 Kč</div>
+                    </div>
+                    <div class="apartment-content">
+                        <div class="apartment-details">
+                            <div class="apartment-info">
+                                <p class="lead">Luxusní apartmán s dvěma ložnicemi a velkorysým obývacím prostorem. Dokonalá volba pro náročné klienty hledající maximální komfort.</p>
+                                
+                                <div class="features-section">
+                                    <h4>Dispozice a prostor</h4>
+                                    <ul class="apartment-features">
+                                        <li><i class="fas fa-expand"></i>90 m² užitné plochy</li>
+                                        <li><i class="fas fa-door-open"></i>Prostorná vstupní hala</li>
+                                        <li><i class="fas fa-bed"></i>Dvě samostatné ložnice</li>
+                                        <li><i class="fas fa-couch"></i>Velkorysý obývací pokoj s kuchyňským koutem</li>
+                                        <li><i class="fas fa-bath"></i>Hlavní koupelna s vanou</li>
+                                        <li><i class="fas fa-toilet"></i>Samostatné WC</li>
+                                    </ul>
+                                </div>
+
+                                <div class="features-section">
+                                    <h4>Vybavení v ceně</h4>
+                                    <ul class="apartment-features">
+                                        <li><i class="fas fa-utensils"></i>Prémiová kuchyňská linka se spotřebiči</li>
+                                        <li><i class="fas fa-temperature-low"></i>Podlahové topení</li>
+                                        <li><i class="fas fa-parking"></i>Dvě vyhrazená parkovací stání</li>
+                                        <li><i class="fas fa-box"></i>Prostorný sklep</li>
+                                    </ul>
+                                </div>
+
+                                <div class="apartment-cta">
+                                    <div class="cta-columns">
+                                        <div class="cta-column">
+                                            <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Mám zájem</a>
+                                        </div>
+                                        <div class="cta-column">
+                                            <a href="#contact" class="btn btn-outline"><i class="fas fa-phone"></i>Zavolejte mi</a>
+                                        </div>
+                                    </div>
+                                    <div class="energy-label">Energetická třída: A</div>
+                                </div>
+                            </div>
+                            <div class="apartment-image">
+                                <img src="images/KOVARSKA_byt 13 007 ve velké velikosti.png" alt="3+kk Apartmán">
+                                <div class="image-badges">
+                                    <span class="badge">Panoramatický výhled</span>
+                                    <span class="badge">Prémiové vybavení</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Investice -->
+    <section id="investment" class="investment-section">
+        <div class="container">
+            <h2 class="section-title">Investice</h2>
+            <p class="section-subtitle">Výnosná příležitost s dlouhodobým potenciálem</p>
+            
+            <div class="investment-content">
+                <div class="investment-row">
+                    <div class="investment-column">
+                        <div class="investment-calc">
+                            <h4><i class="fas fa-chart-line"></i> Investiční kalkulace</h4>
+                            
+                            <div class="calc-inputs">
+                                <div class="input-group">
+                                    <label for="main-apartment-price">Cena apartmánu</label>
+                                    <input type="number" id="main-apartment-price" value="3200000" step="10000">
+                                </div>
+                                <div class="input-group">
+                                    <label for="main-price-per-night">Příjem z pronájmu (ročně)</label>
+                                    <input type="number" id="main-price-per-night" value="273000" step="1000">
+                                </div>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="window.recalculateMainInvestment()">Přepočítat</button>
+                            </div>
+
+                            <div class="calc-list">
+                                <div class="calc-item">
+                                    <span class="label">Cena apartmánu</span>
+                                    <span class="value" id="main-price-value">3 200 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Vlastní zdroje (20%)</span>
+                                    <span class="value" id="main-down-payment-value">640 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Měsíční splátka (4,6%)</span>
+                                    <span class="value" id="main-monthly-payment-value">15 300 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Roční zhodnocení nemovitosti</span>
+                                    <span class="value" id="main-annual-appreciation-value">3.5%</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Příjmy z pronájmu (ročně)</span>
+                                    <span class="value" id="main-annual-income-value">273 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Měsíční cash flow</span>
+                                    <span class="value" id="main-cash-flow-value">11 810 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Roční splátka jistiny hypotéky</span>
+                                    <span class="value" id="main-annual-mortgage-repayment-value">183 600 Kč</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="investment-column">
+                        <div class="investment-benefits">
+                            <h4><i class="fas fa-chart-line"></i> Proč investovat do horského apartmánu?</h4>
+                            <p>Krušné hory zažívají turistický boom a poptávka po kvalitním ubytování stále roste. Apartmány Aviatika nabízí:</p>
+                            <ul class="benefits-list">
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <div class="benefit-content">
+                                        <span class="benefit-title">Celoroční vytížení</span>
+                                        <span class="benefit-desc">díky zimní i letní sezóně</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-globe-europe"></i>
+                                    <div class="benefit-content">
+                                        <span class="benefit-title">Rostoucí popularita lokality</span>
+                                        <span class="benefit-desc">mezi českými i zahraničními turisty</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-tasks"></i>
+                                    <div class="benefit-content">
+                                        <span class="benefit-title">Profesionální správa a marketing</span>
+                                        <span class="benefit-desc">zajišťující maximální obsazenost</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                    <div class="benefit-content">
+                                        <span class="benefit-title">Bezstarostný pronájem</span>
+                                        <span class="benefit-desc">s kompletním servisem</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="cta-buttons">
+                                <a href="investicni-kalkulacka.html" class="btn btn-primary">DETAILNÍ INVESTIČNÍ KALKULAČKA</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Lokalita -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <h2 class="section-title">Lokalita</h2>
+            <p class="section-subtitle">nám. J. Švermy 71, 431 86 Kovářská</p>
+            
+            <div class="location-content glass-card">
+                <div class="map-container">
+                    <div style="height:400px;" id="map"></div>
+                </div>
+                <div class="location-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-mountain"></i> V srdci Krušných hor</h3>
+                        <p>Nachazíme se v malebném městečku Kovářská, které je známé svými lyžařskými možnostmi a krásnou přírodou.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-skiing"></i> Blízké ski areály</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-mountain"></i> Ski areál Klínovec - 15 min</li>
+                            <li><i class="fas fa-mountain"></i> Ski areál Fichtelberg - 20 min</li>
+                            <li><i class="fas fa-mountain"></i> Ski areál Boží Dar - 25 min</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-car"></i> Dopravní dostupnost</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-road"></i> Praha - 2 hodiny</li>
+                            <li><i class="fas fa-road"></i> Karlovy Vary - 45 minut</li>
+                            <li><i class="fas fa-road"></i> Chomutov - 30 minut</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Turistické stezky -->
+            <div class="location-content glass-card">
+                <div class="location-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-hiking"></i> Turistické stezky</h3>
+                        <p>Přímo před domem začíná síť značených turistických tras, které vás zavedou do nejkrásnějších částí Krušných hor.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-map-signs"></i> Červená trasa: Klínovec - Boží Dar (8 km)</li>
+                            <li><i class="fas fa-map-signs"></i> Modrá trasa: Kovářská - Meštery (5 km)</li>
+                            <li><i class="fas fa-map-signs"></i> Zelená trasa: Okruh Kovářskou (3 km)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="location-image">
+                    <img src="images/turisticke-stezky.jpg" alt="Turistické stezky v okolí" class="feature-image">
+                </div>
+            </div>
+
+            <!-- Cyklostezky -->
+            <div class="location-content glass-card">
+                <div class="location-image">
+                    <img src="images/cyklostezky.jpg" alt="Cyklostezky v okolí" class="feature-image">
+                </div>
+                <div class="location-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-bicycle"></i> Cyklostezky</h3>
+                        <p>Oblast je propojena sítí kvalitních cyklostezek vhodných pro rekreační i sportovní cyklistiku.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-route"></i> Krušnohorská magistrála (přímo u domu)</li>
+                            <li><i class="fas fa-route"></i> Okruh Klínovec (15 km)</li>
+                            <li><i class="fas fa-route"></i> Německé cyklostezky (napojení 5 km)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Občanská vybavenost -->
+            <div class="location-content glass-card">
+                <div class="location-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-store"></i> Občanská vybavenost</h3>
+                        <p>Vše potřebné pro pohodlný život najdete v okolí:</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-shopping-cart"></i> Potraviny (200 m)</li>
+                            <li><i class="fas fa-utensils"></i> Restaurace (300 m)</li>
+                            <li><i class="fas fa-bus"></i> Autobusová zastávka (150 m)</li>
+                            <li><i class="fas fa-hospital"></i> Lékař (500 m)</li>
+                            <li><i class="fas fa-envelope"></i> Pošta (400 m)</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-skiing"></i> Sport a rekreace</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-snowflake"></i> Ski areál (5 min chůze)</li>
+                            <li><i class="fas fa-swimming-pool"></i> Koupaliště (1 km)</li>
+                            <li><i class="fas fa-futbol"></i> Sportovní hřiště (300 m)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="location-image">
+                    <img src="images/obcanska-vybavenost.jpg" alt="Občanská vybavenost" class="feature-image">
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info glass-card">
+                    <div class="info-card personal-contact">
+                        <div class="contact-person">
+                            <div class="contact-photo">
+                                <img src="images/david_choc.png" alt="David Choc - Realitní specialista">
+                            </div>
+                            <div class="contact-details">
+                                <h3>David Choc</h3>
+                                <p class="contact-position">Realitní specialista</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-phone"></i> +420 777 888 999</li>
+                                    <li><i class="fas fa-envelope"></i> david@ptf.cz</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-phone"></i> Kontaktujte nás</h3>
+                        <p>Zajistíme vám prohlídku na míru</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-phone"></i> +420 777 888 999</li>
+                            <li><i class="fas fa-envelope"></i> info@ptf.cz</li>
+                            <li><i class="fas fa-clock"></i> Po-Pá: 9:00 - 17:00</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Kde nás najdete</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-building"></i> Kancelař: nám. J. Švermy 71, Kovářská</li>
+                            <li><i class="fas fa-car"></i> Parkovaní před budovou</li>
+                            <li><i class="fas fa-clock"></i> Prohlídky po domluvě</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> O nás</h3>
+                        <p>PTF Reality se specializuje na luxusní nemovitosti v Krušných horách. Naší prioritou je váš komfort a spokojenost.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> 30+ let zkušeností</li>
+                            <li><i class="fas fa-award"></i> Ocenění Realtní společnost roku 2024</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <form class="contact-form glass-card">
+                    <div class="form-group">
+                        <label for="name">Jméno a příjmení</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apartment">Vyberte apartmán</label>
+                        <select id="apartment" name="apartment">
+                            <option value="1kk">1+kk Apartmán</option>
+                            <option value="2kk">2+kk Apartmán</option>
+                            <option value="3kk">3+kk Apartmán</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Zpráva</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Odeslat poptávku</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-text">
+                        <span class="logo-main">AVIATIKA</span>
+                        <span class="logo-separator">|</span>
+                        <span class="logo-sub">horské apartmány</span>
+                    </div>
+                    <div class="ptf-logo">
+                        <img src="logo.png" alt="PTF Reality logo" class="ptf-logo-img">
+                        <p class="ptf-logo-text">Výhradní prodejce</p>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <div class="company-info">
+                        <p>&copy; 2025 PTF Reality, s.r.o. Všechna práva vyhrazena.</p>
+                        <p>IČO: 06684394</p>
+                        <p>Sídlo: Dřevěná 99/3, 30100, Plzeň</p>
+                        <p>Společnost je zapsána v obchodním rejstříku vedeném Krajským soudem v Plzni, oddíl C, vložka 35601.</p>
+                    </div>
+                    <div class="legal-info">
+                        <p>Tento web používá cookies pro zlepšení uživatelského zážitku.</p>
+                        <p>Informace uvedené na této stránce mají pouze informativní charakter a nepředstavují nabídku ve smyslu § 1731 nebo § 1732 zákona č. 89/2012 Sb., občanského zákoníku.</p>
+                        <a href="#" class="privacy-link">Zásady ochrany osobních údajů</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/detail-calculator.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/debug-helper.js"></script>
+</body>
+</html>

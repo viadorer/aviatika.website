@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investiční kalkulačka - Aviatika Horské Apartmány</title>
+    
+    <!-- Styly -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-calculator.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigace -->
+    <nav class="navbar glass-nav">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-text">
+                    <span class="logo-main">AVIATIKA</span>
+                    <span class="logo-separator">&nbsp;|&nbsp;</span>
+                    <span class="logo-sub">horské apartmány</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#about" class="nav-link">O projektu</a>
+                <a href="index.html#apartments" class="nav-link">Apartmány</a>
+                <a href="index.html#gallery" class="nav-link">Galerie</a>
+                <a href="index.html#location" class="nav-link">Lokalita</a>
+                <a href="index.html#investment" class="nav-link">Investice</a>
+                <a href="investicni-kalkulacka.html" class="nav-link active">Investiční kalkulačka</a>
+                <a href="index.html#contact" class="nav-link contact-btn">Kontakt</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero sekce -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-bg">
+            <img src="images/KOVARSKA_byt 13 002b ve velké velikosti.png" alt="Luxusní apartmány Kovařská" class="hero-image">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Detailní investiční kalkulačka</h1>
+                    <p class="hero-subtitle">Spočítejte si návratnost investice do apartmánu v projektu Aviatika</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekce kalkulačky -->
+    <section class="investment-calculator-section">
+        <div class="container">
+        
+            <div class="investment-content glass-card">
+                <div class="investment-text">
+                    <h3>Jak funguje investice do apartmánu?</h3>
+                    <p>Investice do horského apartmánu v projektu Aviatika představuje jedinečnou příležitost pro zhodnocení vašich financí s několika klíčovými výhodami:</p>
+                    
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Garantovaný roční výnos z pronájmu</li>
+                        <li><i class="fas fa-check-circle"></i> Profesionální správa nemovitosti</li>
+                        <li><i class="fas fa-check-circle"></i> Vlastní užívání apartmánu několik týdnů v roce</li>
+                        <li><i class="fas fa-check-circle"></i> Růst hodnoty nemovitosti v čase</li>
+                    </ul>
+
+                    <div class="calculator-container">
+                        <div class="calculator-inputs glass-card">
+                            <h4><i class="fas fa-sliders-h"></i> Nastavení kalkulace</h4>
+                            <div class="input-group">
+                                <label for="detail-apartment-price">Cena apartmánu</label>
+                                <input type="number" id="detail-apartment-price" value="3200000" step="10000">
+                            </div>
+                            <div class="input-group">
+                                <label for="detail-price-per-night-input">Cena za noc</label>
+                                <input type="number" id="detail-price-per-night-input" value="1500" step="100">
+                            </div>
+                            <div class="input-group">
+                                <label for="detail-annual-appreciation-input">Roční zhodnocení nemovitosti (%)</label>
+                                <input type="number" id="detail-annual-appreciation-input" value="5" step="0.5" min="0" max="10">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="updateDetailedCalculation()">Přepočítat</button>
+                        </div>
+
+                        <div class="calculator-results glass-card">
+                            <h4><i class="fas fa-chart-line"></i> Výsledky kalkulace</h4>
+                            
+                            <div class="results-section">
+                                <h5>Základní údaje</h5>
+                                <div class="calc-item">
+                                    <span class="label">Cena apartmánu</span>
+                                    <span class="value" id="detail-price-value">3 200 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Vlastní zdroje (20%)</span>
+                                    <span class="value" id="detail-down-payment">640 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Výše hypotéky (80%)</span>
+                                    <span class="value" id="detail-mortgage-amount">2 560 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Úroková sazba</span>
+                                    <span class="value">4.6% p.a.</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Měsíční splátka hypotéky</span>
+                                    <span class="value" id="detail-monthly-payment">15 300 Kč</span>
+                                </div>
+                            </div>
+                            
+                            <div class="results-section">
+                                <h5>Příjmy z pronájmu</h5>
+                                <div class="calc-item">
+                                    <span class="label">Průměrná cena za noc</span>
+                                    <span class="value" id="detail-price-per-night">1 500 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Roční obsazenost</span>
+                                    <span class="value">50% (182 nocí)</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Hrubý roční příjem</span>
+                                    <span class="value" id="detail-annual-income">273 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Provozní náklady (35%)</span>
+                                    <span class="value" id="detail-operating-costs">95 550 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Čistý roční příjem</span>
+                                    <span class="value" id="detail-net-income">177 450 Kč</span>
+                                </div>
+                            </div>
+                            
+                            <div class="results-section">
+                                <h5>Finanční toky</h5>
+                                <div class="calc-item">
+                                    <span class="label">Roční splátka hypotéky</span>
+                                    <span class="value" id="detail-annual-mortgage">183 600 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Roční zhodnocení nemovitosti</span>
+                                    <span class="value" id="detail-annual-appreciation">5%</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Roční zhodnocení nemovitosti v Kč</span>
+                                    <span class="value" id="detail-annual-appreciation-value">160 000 Kč</span>
+                                </div>
+                                <div class="calc-item">
+                                    <span class="label">Roční splátka jistiny hypotéky</span>
+                                    <span class="value" id="detail-annual-mortgage-repayment">85 333 Kč</span>
+                                </div>
+                                <div class="calc-item highlight">
+                                    <span class="label">Roční cash flow</span>
+                                    <span class="value" id="detail-annual-cash-flow">239 183 Kč</span>
+                                </div>
+                                <div class="calc-item highlight">
+                                    <span class="label">Měsíční cash flow</span>
+                                    <span class="value" id="detail-monthly-cash-flow">19 932 Kč</span>
+                                </div>
+                                <div class="calc-item highlight">
+                                    <span class="label">Návratnost investice</span>
+                                    <span class="value" id="detail-roi">2.7 let</span>
+                                </div>
+                            </div>
+                            
+                            <div class="interest-button-container">
+                                <a href="#contact" class="btn btn-primary btn-large interest-button">
+                                    <i class="fas fa-check-circle"></i> Mám zájem o tuto investici
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-explanation glass-card">
+                        <h4>Vysvětlení kalkulace</h4>
+                        <p>Naše kalkulačka vám pomůže lépe porozumět investici do apartmánu v projektu Aviatika:</p>
+                        <ul>
+                            <li><strong>Celková investice</strong> - celková cena apartmánu včetně vybavení</li>
+                            <li><strong>Vlastní zdroje</strong> - akontace ve výši 20% z celkové investice</li>
+                            <li><strong>Výše hypotéky</strong> - zbývajících 80% financovaných hypotékou</li>
+                            <li><strong>Měsíční splátka hypotéky</strong> - měsíční splátka při úrokové sazbě 4,6% a době splatnosti 30 let</li>
+                            <li><strong>Příjmy z pronájmu</strong> - roční příjem při průměrné obsazenosti 182 dní (50%)</li>
+                            <li><strong>Provozní náklady</strong> - náklady na správu, úklid, energie a údržbu (35% z příjmů)</li>
+                            <li><strong>Čistý příjem</strong> - příjmy z pronájmu po odečtení provozních nákladů</li>
+                            <li><strong>Roční zhodnocení nemovitosti</strong> - předpokládané zhodnocení nemovitosti ročně</li>
+                            <li><strong>Roční splátka jistiny</strong> - část ročních splátek hypotéky, která jde na snížení jistiny (bez úroků)</li>
+                            <li><strong>Roční cash flow</strong> - celkový roční finanční tok zahrnující čistý příjem z pronájmu, splátky hypotéky, zhodnocení nemovitosti a splátky jistiny</li>
+                            <li><strong>Návratnost vlastních zdrojů</strong> - doba v letech, za kterou se vrátí vložené vlastní prostředky při daném ročním cash flow</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-text">
+                        <span class="logo-main">AVIATIKA</span>
+                        <span class="logo-separator">|</span>
+                        <span class="logo-sub">horské apartmány</span>
+                    </div>
+                    <div class="ptf-logo">
+                        <img src="logo.png" alt="PTF Reality logo" class="ptf-logo-img">
+                        <p class="ptf-logo-text">Výhradní prodejce</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h4>Navigace</h4>
+                        <ul>
+                            <li><a href="index.html#about">O projektu</a></li>
+                            <li><a href="index.html#apartments">Apartmány</a></li>
+                            <li><a href="index.html#gallery">Galerie</a></li>
+                            <li><a href="index.html#location">Lokalita</a></li>
+                            <li><a href="index.html#investment">Investice</a></li>
+                            <li><a href="investicni-kalkulacka.html">Investiční kalkulačka</a></li>
+                            <li><a href="index.html#contact">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h4>Kontakt</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> +420 777 123 456</li>
+                            <li><i class="fas fa-envelope"></i> info@aviatika.cz</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Kovářská, Krušné hory</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-company">
+                        <h4>Společnost</h4>
+                        <p>&copy; 2025 PTF Reality, s.r.o. Všechna práva vyhrazena.</p>
+                        <p>IČO: 06684394</p>
+                        <p>Sídlo: Dřevěná 99/3, 30100, Plzeň</p>
+                        <p>Společnost je zapsána v obchodním rejstříku vedeném Krajským soudem v Plzni, oddíl C, vložka 35601.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <div class="legal-info">
+                        <p>Tento web používá cookies pro zlepšení uživatelského zážitku.</p>
+                        <p>Informace uvedené na této stránce mají pouze informativní charakter a nepředstavují nabídku ve smyslu § 1731 nebo § 1732 zákona č. 89/2012 Sb., občanského zákoníku.</p>
+                        <a href="#" class="privacy-link">Zásady ochrany osobních údajů</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/detail-calculator.js"></script>
+</body>
+</html>
