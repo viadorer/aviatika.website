@@ -2534,6 +2534,145 @@ address {
     gap: 1rem;
 }
 
+/* Investment Details Section */
+.investment-details-section {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, rgba(45, 90, 75, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
+}
+
+.investment-overview {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem;
+}
+
+.investment-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.investment-header h2 {
+    font-size: 3rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.investment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.investment-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.investment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.investment-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.investment-item h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.investment-item p {
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.investment-benefits {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.investment-benefits h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.benefit-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-text {
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .investment-overview {
+        padding: 2rem;
+    }
+    
+    .investment-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .investment-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .benefit-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Footer */
 .footer {
     background: var(--color-primary-dark);
