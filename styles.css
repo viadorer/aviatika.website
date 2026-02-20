@@ -106,6 +106,17 @@ select option {
     max-height: 2000px; /* Dostatečně velká hodnota pro zobrazení obsahu */
 }
 
+/* Support accordion for .apartment-type containers used on index.html */
+.apartment-type .apartment-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.apartment-type.active .apartment-content {
+    max-height: 2000px;
+}
+
 .apartment-highlight {
     color: #666;
     font-size: 0.9rem;

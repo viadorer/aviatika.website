@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializace mapy
     const mapElement = document.getElementById('map');
     if (mapElement) {
-        const map = L.map('map').setView([50.3581, 13.0391], 14);
+        const map = L.map('map').setView([50.4393953, 13.0545889], 14);
 
         // Přidání OpenStreetMap podkladu
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).addTo(map);
 
         // Přidání značky
-        const marker = L.marker([50.3581, 13.0391])
+        const marker = L.marker([50.4393953, 13.0545889])
             .addTo(map)
             .bindPopup('<strong>Aviatika - Horské apartmány</strong><br>nám. J. Švermy 71, Kovářská')
             .openPopup();
@@ -106,9 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Scroll with offset for fixed navbar so target isn't hidden
+                const yOffset = -((navbar?.offsetHeight) || 0) - 10; // extra margin
+                const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
                 
                 // Zavřít mobilní menu po kliknutí na odkaz
                 if (mobileMenuBtn?.classList.contains('active')) {
@@ -119,14 +120,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // FAQ-style apartmány
-    const apartmentItems = document.querySelectorAll('.apartment-item');
+    // FAQ-style apartmány (podpora pro .apartment-item i .apartment-type)
+    const apartmentItems = document.querySelectorAll('.apartment-item, .apartment-type');
 
     apartmentItems.forEach(item => {
         const header = item.querySelector('.apartment-header');
         
-        header.addEventListener('click', () => {
-            const currentlyActive = document.querySelector('.apartment-item.active');
+        header?.addEventListener('click', () => {
+            const currentlyActive = document.querySelector('.apartment-item.active, .apartment-type.active');
             
             if (currentlyActive && currentlyActive !== item) {
                 currentlyActive.classList.remove('active');
@@ -155,6 +156,61 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.glass-card, .feature-card, .apartment-card, .gallery-item').forEach(element => {
         observer.observe(element);
     });
+
+    // Kontaktní formulář – odeslání na Realvisor API
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const fullName = document.querySelector('#name').value.trim();
+            const nameParts = fullName.split(/\s+/);
+            const firstName = nameParts[0] || '';
+            const lastName = nameParts.slice(1).join(' ') || '';
+
+            const email = document.querySelector('#email').value.trim();
+            const phone = document.querySelector('#phone').value.trim();
+            const message = document.querySelector('#message').value.trim();
+            const projectInterest = document.querySelector('#project-interest').value.trim();
+
+            const payload = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phone: phone,
+                message: message,
+                data: {
+                    source: 'web',
+                    campaign: 'aviatika-website',
+                    project_interest: projectInterest
+                }
+            };
+
+            try {
+                const response = await fetch(CONFIG.API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': CONFIG.REALVISOR_API_KEY
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    alert('Děkujeme za váš zájem! Brzy se vám ozveme.');
+                    e.target.reset();
+                    document.querySelector('#project-interest').value = 'Koupě celého projektu';
+                } else {
+                    const err = await response.json();
+                    console.error('API error:', err);
+                    alert('Odeslání se nezdařilo. Zkuste to prosím znovu.');
+                }
+            } catch (error) {
+                console.error('Network error:', error);
+                alert('Chyba připojení. Zkuste to prosím znovu.');
+            }
+        });
+    }
 
     // Accordion functionality
     const layoutItems = document.querySelectorAll('.layout-item');
