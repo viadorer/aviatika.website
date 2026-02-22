@@ -187,11 +187,10 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch(CONFIG.API_URL, {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'X-API-Key': CONFIG.REALVISOR_API_KEY
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(payload)
                 });
