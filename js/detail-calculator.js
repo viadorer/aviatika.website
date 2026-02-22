@@ -84,7 +84,7 @@ function updateProjectCalculation() {
     console.log('Updating project calculation');
 
     // Získání hodnot ze vstupních polí
-    const projectPrice = parseInt(document.getElementById('project-price').value) || 9900000;
+    const projectPrice = parseInt(document.getElementById('project-price').value) || 7900000;
     const capex = parseInt(document.getElementById('project-capex').value) || 0;
     const unitCount = parseInt(document.getElementById('project-unit-count').value) || PROJECT_DEFAULT_UNIT_COUNT;
     const adr = parseInt(document.getElementById('project-adr').value) || 1500;
