@@ -157,37 +157,43 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Kontaktní formulář – odeslání na Realvisor API
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
+    // RealVisor – kontaktni-formu-07197
+    (function() {
+        const form = document.querySelector('#contact-form');
+        if (!form) return;
+
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            const fullName = document.querySelector('#name').value.trim();
-            const nameParts = fullName.split(/\s+/);
-            const firstName = nameParts[0] || '';
-            const lastName = nameParts.slice(1).join(' ') || '';
+            const name = form.querySelector('[name="name"]').value.trim();
+            const email = form.querySelector('[name="email"]').value.trim();
+            const phone = form.querySelector('[name="phone"]').value.trim();
+            const interest = form.querySelector('[name="interest"]').value;
+            const message = form.querySelector('[name="message"]').value.trim();
 
-            const email = document.querySelector('#email').value.trim();
-            const phone = document.querySelector('#phone').value.trim();
-            const message = document.querySelector('#message').value.trim();
-            const projectInterest = document.querySelector('#project-interest').value.trim();
+            const parts = name.split(/\s+/);
+            const firstName = parts[0] || '';
+            const lastName = parts.slice(1).join(' ') || '';
 
             const payload = {
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                phone: phone,
-                message: message,
+                firstName,
+                lastName,
+                email,
+                phone,
+                message,
                 data: {
                     source: 'web',
-                    campaign: 'aviatika-website',
-                    project_interest: projectInterest
+                    interest: interest
                 }
             };
 
+            const btn = form.querySelector('[type="submit"]');
+            const origText = btn.textContent;
+            btn.textContent = 'Odesílám...';
+            btn.disabled = true;
+
             try {
-                const response = await fetch('/api/contact', {
+                const res = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -195,21 +201,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: JSON.stringify(payload)
                 });
 
-                if (response.ok) {
-                    alert('Děkujeme za váš zájem! Brzy se vám ozveme.');
-                    e.target.reset();
-                    document.querySelector('#project-interest').value = 'Koupě celého projektu';
+                if (res.ok) {
+                    form.reset();
+                    document.querySelector('#interest').value = 'Koupě celého projektu';
+                    btn.textContent = 'Odesláno ✓';
+                    setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
                 } else {
-                    const err = await response.json();
-                    console.error('API error:', err);
-                    alert('Odeslání se nezdařilo. Zkuste to prosím znovu.');
+                    console.error('API error:', await res.json());
+                    btn.textContent = 'Chyba – zkuste znovu';
+                    setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
                 }
-            } catch (error) {
-                console.error('Network error:', error);
-                alert('Chyba připojení. Zkuste to prosím znovu.');
+            } catch (err) {
+                console.error('Network error:', err);
+                btn.textContent = 'Chyba připojení';
+                setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
             }
         });
-    }
+    })();
 
     // Accordion functionality
     const layoutItems = document.querySelectorAll('.layout-item');
