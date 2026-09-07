@@ -1,1 +1,12 @@
+# macOS
 .DS_Store
+._*
+
+# Pracovní
+__pycache__/
+*.pyc
+venv/
+.vercel
+
+# Lokální konfigurace s API klíčem (klíč patří do proměnných prostředí na Vercelu)
+js/config.js

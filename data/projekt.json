@@ -1,0 +1,289 @@
+{
+  "_poznamka": "JEDINÝ ZDROJ PRAVDY pro celý web. Po každé změně spustit: python3 build.py",
+
+  "web": {
+    "nazev": "Aviatika Kovářská",
+    "nazev_dlouhy": "Aviatika — horský resort Kovářská",
+    "domena": "www.aviatika.cloud",
+    "url": "https://www.aviatika.cloud",
+    "tagline": "horský resort",
+    "adresa_objektu": "nám. J. Švermy 71, 431 86 Kovářská",
+    "gps": [50.4393953, 13.0545889],
+
+    "prodavajici": "PTF Reality, s.r.o.",
+    "prodavajici_ico": "06684394",
+    "prodavajici_adresa": "Radyňská 463/33, 326 00 Plzeň 2-Slovany",
+    "prodavajici_rejstrik": "Zapsána v obchodním rejstříku vedeném Krajským soudem v Plzni, oddíl C, vložka 35601.",
+
+    "makler": "David Choc",
+    "makler_role": "realitní specialista",
+    "makler_tel": "+420 774 052 232",
+    "makler_tel_link": "+420774052232",
+    "makler_email": "david.choc@ptf.cz",
+    "makler_praxe": "30+ let zkušeností na realitním trhu",
+
+    "firma_email": "info@ptf.cz",
+    "kancelar_tel": "+420 603 843 921",
+    "kancelar_tel_link": "+420603843921",
+    "otviraci_doba": "Po–Pá 9:00–17:00",
+
+    "pobocka_plzen": "Radyňská 463/33, 326 00 Plzeň 2-Slovany",
+    "pobocka_praha": "Pod turnovskou tratí 182/18, 198 00 Praha 9 – Hloubětín",
+
+    "penb": "DOPLNIT: třída energetické náročnosti budovy (PENB) + PDF do web/assets/doc/",
+    "dph_text": "DOPLNIT: informace o DPH u kupní ceny"
+  },
+
+  "prodej": {
+    "cena": 7900000,
+    "cena_slovy": "7,9 mil. Kč",
+    "predmet_souhrn": "Nemovitost, rozestavěná stavba, materiál na hrubou stavbu a platné stavební povolení",
+    "polozky": [
+      {
+        "klic": "nemovitost",
+        "ikona": "budova",
+        "nazev": "Nemovitost",
+        "popis": "Pozemek a objekt v centru Kovářské, na náměstí J. Švermy, s výhledem do hřebene Krušných hor."
+      },
+      {
+        "klic": "stavba",
+        "ikona": "kladivo",
+        "nazev": "Rozestavěná stavba",
+        "popis": "Hrubá stavba v pokročilé fázi. Navazuje se okamžitě, bez demolic a bez přípravné fáze."
+      },
+      {
+        "klic": "material",
+        "ikona": "kostky",
+        "nazev": "Materiál na hrubou stavbu",
+        "popis": "Materiál potřebný k dokončení hrubé stavby je už na místě a je součástí kupní ceny."
+      },
+      {
+        "klic": "povoleni",
+        "ikona": "dokument",
+        "nazev": "Stavební povolení",
+        "popis": "Platné stavební povolení a kompletní projektová dokumentace. Nečeká se na povolovací proces."
+      }
+    ],
+    "rozsiritelnost": "Projekt je rozšiřitelný o další fáze výstavby."
+  },
+
+  "model_vynosu": {
+    "_upozorneni": "MODELOVÁ ČÍSLA — nejde o zaručený ani nabízený výnos. Web je vypisuje výhradně s viditelnou poznámkou, že jde o odhad kupujícího. Před spuštěním ověřit u klienta a případně podložit propočtem.",
+    "roi_pct_min": 50,
+    "roi_pct_max": 80,
+    "prijem_rocne_min": 1500000,
+    "prijem_rocne_max": 2500000,
+    "hodnota_po_dokonceni_min": 15000000,
+    "hodnota_po_dokonceni_max": 18000000,
+    "disclaimer": "Uvedená čísla jsou modelovým odhadem při dokončení a plném provozu objektu. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, obsazenosti, cenové hladině a způsobu provozu."
+  },
+
+  "kalkulacka": {
+    "_upozorneni": "Výchozí parametry kalkulačky. Sazby a obsazenost ověřit před spuštěním webu.",
+    "cena_projektu": 7900000,
+    "capex": 0,
+    "pocet_jednotek": 20,
+    "adr": 2500,
+    "obsazenost_dni": 182,
+    "opex_pct": 35,
+    "vlastni_zdroje_pct": 20,
+    "urok_pct": 4.6,
+    "splatnost_let": 30,
+    "zhodnoceni_pct": 5
+  },
+
+  "dispozice": [
+    {
+      "klic": "1kk",
+      "typ": "1+kk",
+      "nazev": "Apartmán 1+kk",
+      "plocha": "36–52 m²",
+      "perex": "Účelně řešený prostor pro dva. Nejrychleji obsaditelná jednotka v celoročním provozu.",
+      "mistnosti": [
+        "Vstupní chodba se šatnou",
+        "Obývací pokoj s kuchyňským koutem",
+        "Koupelna s WC"
+      ],
+      "parametry": [
+        "Terasa až 12,71 m²",
+        "Sklep / koje 2,4–4,3 m²"
+      ],
+      "foto": ["1kk-01", "1kk-02", "1kk-03"]
+    },
+    {
+      "klic": "2kk",
+      "typ": "2+kk",
+      "nazev": "Apartmán 2+kk",
+      "plocha": "48–53 m²",
+      "perex": "Oddělená ložnice a velký obytný prostor. Typ s nejširší cílovou skupinou — páry i rodiny.",
+      "mistnosti": [
+        "Vstupní chodba se šatnou",
+        "Samostatná ložnice",
+        "Obývací pokoj s kuchyňským koutem",
+        "Koupelna s WC"
+      ],
+      "parametry": [
+        "Terasa až 12,71 m²",
+        "Sklep / koje 2,4–4,3 m²"
+      ],
+      "foto": ["2kk-01", "2kk-02", "2kk-03"]
+    },
+    {
+      "klic": "3kk",
+      "typ": "3+kk",
+      "nazev": "Apartmán 3+kk",
+      "plocha": "90 m²",
+      "perex": "Největší jednotka v projektu. Dvě ložnice, velkorysý obytný prostor a panoramatický výhled.",
+      "mistnosti": [
+        "Prostorná vstupní hala",
+        "Dvě samostatné ložnice",
+        "Obývací pokoj s kuchyňským koutem",
+        "Hlavní koupelna s vanou",
+        "Samostatné WC"
+      ],
+      "parametry": [
+        "Panoramatický výhled",
+        "Sklep / koje 2,4–4,3 m²"
+      ],
+      "foto": ["3kk-01", "3kk-02", "3kk-03"]
+    }
+  ],
+
+  "_poznamka_vybaveni": "Věta se vypisuje u každé dispozice.",
+  "vybaveni_poznamka": "Vybavení zobrazené ve vizualizacích není součástí prodeje.",
+  "vizualizace_poznamka": "Obrázky jsou architektonické vizualizace dokončeného stavu, nikoli fotografie současného stavu objektu.",
+
+  "lokalita": {
+    "perex": "Kovářská leží v hřebeni Krušných hor mezi Klínovcem a německou hranicí. Zimní i letní sezóna se tu překrývají, takže objekt má využití celý rok.",
+    "skupiny": [
+      {
+        "nazev": "Ski areály",
+        "ikona": "hora",
+        "polozky": [
+          ["Klínovec", "15 min"],
+          ["Fichtelberg (DE)", "20 min"],
+          ["Boží Dar", "25 min"]
+        ]
+      },
+      {
+        "nazev": "Dopravní dostupnost",
+        "ikona": "auto",
+        "polozky": [
+          ["Chomutov", "30 min"],
+          ["Karlovy Vary", "45 min"],
+          ["Praha", "2 hodiny"]
+        ]
+      },
+      {
+        "nazev": "Občanská vybavenost",
+        "ikona": "obchod",
+        "polozky": [
+          ["Autobusová zastávka", "150 m"],
+          ["Potraviny", "200 m"],
+          ["Restaurace", "300 m"],
+          ["Sportovní hřiště", "300 m"],
+          ["Pošta", "400 m"],
+          ["Lékař", "500 m"],
+          ["Koupaliště", "1 km"]
+        ]
+      }
+    ],
+    "_poznamka_trasy": "Každý blok má fotku, která tématu skutečně odpovídá. Při výměně fotek na to dbát — zimní snímek u letní sekce působí nedůvěryhodně.",
+    "trasy": [
+      {
+        "nazev": "Léto na hřebeni",
+        "ikona": "turistika",
+        "foto": "krusne-hory-inverze",
+        "popis": "Přímo od objektu vede síť značených tras i cyklostezek do hřebenových partií Krušných hor.",
+        "polozky": [
+          "Červená: Klínovec – Boží Dar (8 km)",
+          "Modrá: Kovářská – Meštery (5 km)",
+          "Krušnohorská magistrála přímo u objektu",
+          "Napojení na německé cyklostezky (5 km)"
+        ]
+      },
+      {
+        "nazev": "Zimní sezóna",
+        "ikona": "lyze",
+        "foto": "krusne-hory-lanovka",
+        "popis": "Nejbližší vlek je pár minut chůze, velké areály do 25 minut autem.",
+        "polozky": [
+          "Ski areál Kovářská (5 min chůze)",
+          "Klínovec — největší areál Krušných hor",
+          "Přeshraniční skipas Fichtelberg / Klínovec"
+        ]
+      },
+      {
+        "nazev": "Klínovec",
+        "ikona": "hora",
+        "foto": "krusne-hory-hreben",
+        "popis": "Nejvyšší hora Krušných hor (1 244 m) s rozhlednou je 15 minut autem. Táhne návštěvnost regionu celoročně.",
+        "polozky": [
+          "Rozhledna s výhledem do Čech i Saska",
+          "Bikepark a singletracky v létě",
+          "Sjezdovky všech obtížností v zimě"
+        ]
+      }
+    ]
+  },
+
+  "foto": {
+    "_poznamka": "Mapování zdrojových souborů z images/ na výstupní názvy. Po změně spustit build_images.py.",
+    "budova-zahrada": {
+      "zdroj": "vizualizace-budova-zahrada.png",
+      "alt": "Vizualizace objektu Aviatika od zahrady",
+      "typ": "vizualizace"
+    },
+    "budova-ulice": {
+      "zdroj": "vizualizace-budova-ulice.png",
+      "alt": "Vizualizace objektu Aviatika z náměstí J. Švermy",
+      "typ": "vizualizace"
+    },
+
+    "1kk-01": { "zdroj": "KOVARSKA_byt 10 01 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — obytný prostor", "typ": "vizualizace" },
+    "1kk-02": { "zdroj": "KOVARSKA_byt 10 02 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — kuchyňský kout", "typ": "vizualizace" },
+    "1kk-03": { "zdroj": "KOVARSKA_byt 10 05 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — koupelna", "typ": "vizualizace" },
+    "1kk-04": { "zdroj": "KOVARSKA_byt 10 03 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — pohled k oknu", "typ": "vizualizace" },
+    "1kk-05": { "zdroj": "KOVARSKA_byt 10 07 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — detail interiéru", "typ": "vizualizace" },
+
+    "2kk-01": { "zdroj": "KOVARSKA_byt 4 a 8 001 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — obytný prostor", "typ": "vizualizace" },
+    "2kk-02": { "zdroj": "KOVARSKA_byt 4 a 8 003 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — kuchyňský kout", "typ": "vizualizace" },
+    "2kk-03": { "zdroj": "KOVARSKA_byt 4 a 8 005 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — ložnice", "typ": "vizualizace" },
+    "2kk-04": { "zdroj": "KOVARSKA_byt 4 a 8 010 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — koupelna", "typ": "vizualizace" },
+    "2kk-05": { "zdroj": "KOVARSKA_byt 4 a 8 007 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — detail interiéru", "typ": "vizualizace" },
+
+    "3kk-01": { "zdroj": "KOVARSKA_byt 13 007 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — obytný prostor", "typ": "vizualizace" },
+    "3kk-02": { "zdroj": "KOVARSKA_byt 13 003 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — kuchyňský kout", "typ": "vizualizace" },
+    "3kk-03": { "zdroj": "KOVARSKA_byt 13 002b ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — obytný prostor s galerií", "typ": "vizualizace" },
+    "3kk-04": { "zdroj": "KOVARSKA_byt 13 005 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — ložnice", "typ": "vizualizace" },
+    "3kk-05": { "zdroj": "KOVARSKA_byt 13 009 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — koupelna", "typ": "vizualizace" },
+
+    "krusne-hory-lanovka": {
+      "zdroj": "krusne-hory-lanovka.jpg",
+      "alt": "Lanovka a sjezdovka v Krušných horách v zimě",
+      "typ": "fotografie",
+      "_puvod": "Převzato ze zdrojů sesterského projektu (název souboru odpovídá Pixabay). PŘED SPUŠTĚNÍM OVĚŘIT LICENCI."
+    },
+    "krusne-hory-inverze": {
+      "zdroj": "krusne-hory-inverze.jpg",
+      "alt": "Inverze nad hřebenem Krušných hor",
+      "typ": "fotografie",
+      "_puvod": "Převzato ze zdrojů sesterského projektu (název souboru odpovídá Pixabay). PŘED SPUŠTĚNÍM OVĚŘIT LICENCI."
+    },
+    "krusne-hory-hreben": {
+      "zdroj": "krusne-hory-hreben.jpg",
+      "alt": "Rozhledna na Klínovci v zimě",
+      "typ": "fotografie",
+      "_puvod": "Převzato ze zdrojů sesterského projektu (název souboru odpovídá Pixabay). PŘED SPUŠTĚNÍM OVĚŘIT LICENCI."
+    },
+
+    "makler": { "zdroj": "david_choc.png", "alt": "David Choc, realitní specialista", "typ": "portret" }
+  },
+
+  "galerie": [
+    "budova-zahrada", "budova-ulice",
+    "3kk-01", "3kk-03", "3kk-02", "3kk-04", "3kk-05",
+    "2kk-01", "2kk-02", "2kk-03", "2kk-04", "2kk-05",
+    "1kk-01", "1kk-02", "1kk-04", "1kk-03", "1kk-05"
+  ]
+}
