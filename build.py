@@ -111,6 +111,16 @@ def obr(klic, trida="shot", sizes="100vw", lazy=True, prioritni=False):
             f'</picture></figure>')
 
 
+def obr_lb(klic, trida="shot", sizes="100vw"):
+    """Obrázek, který se dá otevřít v lightboxu. Odkaz míří na plnou velikost,
+    app.js si u prohlížečů s podporou WebP přepíše příponu sám."""
+    meta = FOTO.get(klic)
+    if not meta:
+        return f"<!-- chybí obrázek {klic} -->"
+    return (f'<a href="/assets/img/{klic}.jpg" data-lightbox data-alt="{esc(meta["alt"])}">'
+            f'{obr(klic, trida, sizes)}</a>')
+
+
 # ---------------------------------------------------------------- kostra
 
 NAV = [
@@ -349,6 +359,11 @@ def model_dlazdice():
 
 def page_index():
     dph = doplnit("dph_text")
+    # Šest vizualizací napříč dispozicemi; celou sadu nese stránka Galerie.
+    vyber = ["3kk-01", "2kk-01", "1kk-01", "3kk-11", "2kk-09", "1kk-08"]
+    ukazka = "".join(obr_lb(k, "shot", "(max-width:520px) 100vw, (max-width:860px) 50vw, 33vw")
+                     for k in vyber if k in FOTO)
+    pocet_fotek = len(D["galerie"])
     polozky = "".join(
         f'<div class="card">{ico(p["ikona"])}<h3>{esc(p["nazev"])}</h3><p>{esc(p["popis"])}</p></div>'
         for p in P["polozky"]
@@ -436,6 +451,21 @@ def page_index():
     <div class="grid grid--3">{dispozice}</div>
     <div class="btn-row mt">
       <a class="btn btn--ghost" href="/skladba-projektu/">Podrobná skladba a vizualizace {ico('sipka', 'ico ico--sm')}</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Vizualizace</p>
+      <h2>Jak bude objekt vypadat</h2>
+      <p>Architektonické vizualizace dokončeného stavu — exteriér i všechny tři
+         typy apartmánů.</p>
+    </div>
+    <div class="gallery">{ukazka}</div>
+    <div class="btn-row mt">
+      <a class="btn btn--ghost" href="/galerie/">Celá galerie ({pocet_fotek} vizualizací) {ico('sipka', 'ico ico--sm')}</a>
     </div>
   </div>
 </section>
@@ -563,13 +593,13 @@ def page_skladba():
         )
         chipy = "".join(f"<span>{esc(c)}</span>" for c in d["parametry"])
         fotky = "".join(
-            obr(k, "shot", "(max-width:860px) 100vw, 45vw") for k in d["foto"][:3]
+            obr_lb(k, "shot", "(max-width:860px) 100vw, 45vw") for k in d["foto"]
         )
         bloky += f"""<div class="unit">
   <button class="unit__head" aria-expanded="false" aria-controls="u-{d['klic']}">
     <span class="unit__tag">{esc(d['typ'])}</span>
     <h3>{esc(d['nazev'])}</h3>
-    <span class="unit__meta">{esc(d['plocha'])}</span>
+    <span class="unit__meta">{esc(d['plocha'])} · {len(d['foto'])} vizualizací</span>
     {ico('chevron', 'ico unit__chev')}
   </button>
   <div class="unit__body" id="u-{d['klic']}" hidden>

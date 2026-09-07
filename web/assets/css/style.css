@@ -258,6 +258,9 @@ figure{margin:0}
 
 .mosaic{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.6vw,20px)}
 .mosaic > :first-child{grid-column:1 / -1}
+.mosaic a{display:block;border-radius:var(--r);overflow:hidden}
+.mosaic a img{transition:transform .45s ease}
+.mosaic a:hover img{transform:scale(1.03)}
 @media (max-width:600px){.mosaic{grid-template-columns:1fr}.mosaic > :first-child{grid-column:auto}}
 
 /* ---------- seznamy ---------- */

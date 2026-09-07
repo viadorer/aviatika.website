@@ -1,6 +1,5 @@
 {
   "_poznamka": "JEDINÝ ZDROJ PRAVDY pro celý web. Po každé změně spustit: python3 build.py",
-
   "web": {
     "nazev": "Aviatika Kovářská",
     "nazev_dlouhy": "Aviatika — horský resort Kovářská",
@@ -8,32 +7,29 @@
     "url": "https://www.aviatika.cloud",
     "tagline": "horský resort",
     "adresa_objektu": "nám. J. Švermy 71, 431 86 Kovářská",
-    "gps": [50.4393953, 13.0545889],
-
+    "gps": [
+      50.4393953,
+      13.0545889
+    ],
     "prodavajici": "PTF Reality, s.r.o.",
     "prodavajici_ico": "06684394",
     "prodavajici_adresa": "Radyňská 463/33, 326 00 Plzeň 2-Slovany",
     "prodavajici_rejstrik": "Zapsána v obchodním rejstříku vedeném Krajským soudem v Plzni, oddíl C, vložka 35601.",
-
     "makler": "David Choc",
     "makler_role": "realitní specialista",
     "makler_tel": "+420 774 052 232",
     "makler_tel_link": "+420774052232",
     "makler_email": "david.choc@ptf.cz",
     "makler_praxe": "30+ let zkušeností na realitním trhu",
-
     "firma_email": "info@ptf.cz",
     "kancelar_tel": "+420 603 843 921",
     "kancelar_tel_link": "+420603843921",
     "otviraci_doba": "Po–Pá 9:00–17:00",
-
     "pobocka_plzen": "Radyňská 463/33, 326 00 Plzeň 2-Slovany",
     "pobocka_praha": "Pod turnovskou tratí 182/18, 198 00 Praha 9 – Hloubětín",
-
     "penb": "DOPLNIT: třída energetické náročnosti budovy (PENB) + PDF do web/assets/doc/",
     "dph_text": "DOPLNIT: informace o DPH u kupní ceny"
   },
-
   "prodej": {
     "cena": 7900000,
     "cena_slovy": "7,9 mil. Kč",
@@ -66,7 +62,6 @@
     ],
     "rozsiritelnost": "Projekt je rozšiřitelný o další fáze výstavby."
   },
-
   "model_vynosu": {
     "_upozorneni": "MODELOVÁ ČÍSLA — nejde o zaručený ani nabízený výnos. Web je vypisuje výhradně s viditelnou poznámkou, že jde o odhad kupujícího. Před spuštěním ověřit u klienta a případně podložit propočtem.",
     "roi_pct_min": 50,
@@ -77,7 +72,6 @@
     "hodnota_po_dokonceni_max": 18000000,
     "disclaimer": "Uvedená čísla jsou modelovým odhadem při dokončení a plném provozu objektu. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, obsazenosti, cenové hladině a způsobu provozu."
   },
-
   "kalkulacka": {
     "_upozorneni": "Výchozí parametry kalkulačky. Sazby a obsazenost ověřit před spuštěním webu.",
     "cena_projektu": 7900000,
@@ -91,7 +85,6 @@
     "splatnost_let": 30,
     "zhodnoceni_pct": 5
   },
-
   "dispozice": [
     {
       "klic": "1kk",
@@ -108,7 +101,18 @@
         "Terasa až 12,71 m²",
         "Sklep / koje 2,4–4,3 m²"
       ],
-      "foto": ["1kk-01", "1kk-02", "1kk-03"]
+      "foto": [
+        "1kk-01",
+        "1kk-02",
+        "1kk-03",
+        "1kk-04",
+        "1kk-05",
+        "1kk-06",
+        "1kk-07",
+        "1kk-08",
+        "1kk-09",
+        "1kk-10"
+      ]
     },
     {
       "klic": "2kk",
@@ -126,7 +130,20 @@
         "Terasa až 12,71 m²",
         "Sklep / koje 2,4–4,3 m²"
       ],
-      "foto": ["2kk-01", "2kk-02", "2kk-03"]
+      "foto": [
+        "2kk-01",
+        "2kk-02",
+        "2kk-03",
+        "2kk-04",
+        "2kk-05",
+        "2kk-06",
+        "2kk-07",
+        "2kk-08",
+        "2kk-09",
+        "2kk-10",
+        "2kk-11",
+        "2kk-12"
+      ]
     },
     {
       "klic": "3kk",
@@ -145,14 +162,28 @@
         "Panoramatický výhled",
         "Sklep / koje 2,4–4,3 m²"
       ],
-      "foto": ["3kk-01", "3kk-02", "3kk-03"]
+      "foto": [
+        "3kk-01",
+        "3kk-02",
+        "3kk-03",
+        "3kk-04",
+        "3kk-05",
+        "3kk-06",
+        "3kk-07",
+        "3kk-08",
+        "3kk-09",
+        "3kk-10",
+        "3kk-11",
+        "3kk-12",
+        "3kk-13",
+        "3kk-14",
+        "3kk-15"
+      ]
     }
   ],
-
   "_poznamka_vybaveni": "Věta se vypisuje u každé dispozice.",
   "vybaveni_poznamka": "Vybavení zobrazené ve vizualizacích není součástí prodeje.",
   "vizualizace_poznamka": "Obrázky jsou architektonické vizualizace dokončeného stavu, nikoli fotografie současného stavu objektu.",
-
   "lokalita": {
     "perex": "Kovářská leží v hřebeni Krušných hor mezi Klínovcem a německou hranicí. Zimní i letní sezóna se tu překrývají, takže objekt má využití celý rok.",
     "skupiny": [
@@ -160,31 +191,70 @@
         "nazev": "Ski areály",
         "ikona": "hora",
         "polozky": [
-          ["Klínovec", "15 min"],
-          ["Fichtelberg (DE)", "20 min"],
-          ["Boží Dar", "25 min"]
+          [
+            "Klínovec",
+            "15 min"
+          ],
+          [
+            "Fichtelberg (DE)",
+            "20 min"
+          ],
+          [
+            "Boží Dar",
+            "25 min"
+          ]
         ]
       },
       {
         "nazev": "Dopravní dostupnost",
         "ikona": "auto",
         "polozky": [
-          ["Chomutov", "30 min"],
-          ["Karlovy Vary", "45 min"],
-          ["Praha", "2 hodiny"]
+          [
+            "Chomutov",
+            "30 min"
+          ],
+          [
+            "Karlovy Vary",
+            "45 min"
+          ],
+          [
+            "Praha",
+            "2 hodiny"
+          ]
         ]
       },
       {
         "nazev": "Občanská vybavenost",
         "ikona": "obchod",
         "polozky": [
-          ["Autobusová zastávka", "150 m"],
-          ["Potraviny", "200 m"],
-          ["Restaurace", "300 m"],
-          ["Sportovní hřiště", "300 m"],
-          ["Pošta", "400 m"],
-          ["Lékař", "500 m"],
-          ["Koupaliště", "1 km"]
+          [
+            "Autobusová zastávka",
+            "150 m"
+          ],
+          [
+            "Potraviny",
+            "200 m"
+          ],
+          [
+            "Restaurace",
+            "300 m"
+          ],
+          [
+            "Sportovní hřiště",
+            "300 m"
+          ],
+          [
+            "Pošta",
+            "400 m"
+          ],
+          [
+            "Lékař",
+            "500 m"
+          ],
+          [
+            "Koupaliště",
+            "1 km"
+          ]
         ]
       }
     ],
@@ -226,7 +296,6 @@
       }
     ]
   },
-
   "foto": {
     "_poznamka": "Mapování zdrojových souborů z images/ na výstupní názvy. Po změně spustit build_images.py.",
     "budova-zahrada": {
@@ -239,25 +308,191 @@
       "alt": "Vizualizace objektu Aviatika z náměstí J. Švermy",
       "typ": "vizualizace"
     },
-
-    "1kk-01": { "zdroj": "KOVARSKA_byt 10 01 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — obytný prostor", "typ": "vizualizace" },
-    "1kk-02": { "zdroj": "KOVARSKA_byt 10 02 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — kuchyňský kout", "typ": "vizualizace" },
-    "1kk-03": { "zdroj": "KOVARSKA_byt 10 05 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — koupelna", "typ": "vizualizace" },
-    "1kk-04": { "zdroj": "KOVARSKA_byt 10 03 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — pohled k oknu", "typ": "vizualizace" },
-    "1kk-05": { "zdroj": "KOVARSKA_byt 10 07 ve velké velikosti.png", "alt": "Vizualizace apartmánu 1+kk — detail interiéru", "typ": "vizualizace" },
-
-    "2kk-01": { "zdroj": "KOVARSKA_byt 4 a 8 001 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — obytný prostor", "typ": "vizualizace" },
-    "2kk-02": { "zdroj": "KOVARSKA_byt 4 a 8 003 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — kuchyňský kout", "typ": "vizualizace" },
-    "2kk-03": { "zdroj": "KOVARSKA_byt 4 a 8 005 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — ložnice", "typ": "vizualizace" },
-    "2kk-04": { "zdroj": "KOVARSKA_byt 4 a 8 010 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — koupelna", "typ": "vizualizace" },
-    "2kk-05": { "zdroj": "KOVARSKA_byt 4 a 8 007 ve velké velikosti.png", "alt": "Vizualizace apartmánu 2+kk — detail interiéru", "typ": "vizualizace" },
-
-    "3kk-01": { "zdroj": "KOVARSKA_byt 13 007 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — obytný prostor", "typ": "vizualizace" },
-    "3kk-02": { "zdroj": "KOVARSKA_byt 13 003 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — kuchyňský kout", "typ": "vizualizace" },
-    "3kk-03": { "zdroj": "KOVARSKA_byt 13 002b ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — obytný prostor s galerií", "typ": "vizualizace" },
-    "3kk-04": { "zdroj": "KOVARSKA_byt 13 005 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — ložnice", "typ": "vizualizace" },
-    "3kk-05": { "zdroj": "KOVARSKA_byt 13 009 ve velké velikosti.png", "alt": "Vizualizace apartmánu 3+kk — koupelna", "typ": "vizualizace" },
-
+    "1kk-01": {
+      "zdroj": "KOVARSKA_byt 10 01 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — obytný prostor s kuchyňským koutem a jídelním stolem",
+      "typ": "vizualizace"
+    },
+    "1kk-02": {
+      "zdroj": "KOVARSKA_byt 10 02 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — kuchyňská linka a jídelní stůl s pohovkou",
+      "typ": "vizualizace"
+    },
+    "1kk-03": {
+      "zdroj": "KOVARSKA_byt 10 03 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — kuchyňský kout s troubou a jídelní částí",
+      "typ": "vizualizace"
+    },
+    "1kk-04": {
+      "zdroj": "KOVARSKA_byt 10 04 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — jídelní stůl a televizní stěna",
+      "typ": "vizualizace"
+    },
+    "1kk-05": {
+      "zdroj": "KOVARSKA_byt 10 05 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — pohled do obytného prostoru s kuchyní",
+      "typ": "vizualizace"
+    },
+    "1kk-06": {
+      "zdroj": "KOVARSKA_byt 10 06 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — jídelní stůl a kuchyňská linka",
+      "typ": "vizualizace"
+    },
+    "1kk-07": {
+      "zdroj": "KOVARSKA_byt 10 07 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — spací část, pohled ze vstupních dveří",
+      "typ": "vizualizace"
+    },
+    "1kk-08": {
+      "zdroj": "KOVARSKA_byt 10 08 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — spací část s postelí a zrcadly",
+      "typ": "vizualizace"
+    },
+    "1kk-09": {
+      "zdroj": "KOVARSKA_byt 10 09 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — spací část s postelí a policemi",
+      "typ": "vizualizace"
+    },
+    "1kk-10": {
+      "zdroj": "KOVARSKA_byt 10 10 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 1+kk — spací část s oknem",
+      "typ": "vizualizace"
+    },
+    "2kk-01": {
+      "zdroj": "KOVARSKA_byt 4 a 8 001 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — obytný prostor s jídelním stolem a kuchyní",
+      "typ": "vizualizace"
+    },
+    "2kk-02": {
+      "zdroj": "KOVARSKA_byt 4 a 8 002 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — jídelní stůl a kuchyňská linka",
+      "typ": "vizualizace"
+    },
+    "2kk-03": {
+      "zdroj": "KOVARSKA_byt 4 a 8 003 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — kuchyňská linka s dřevěnými horními skříňkami",
+      "typ": "vizualizace"
+    },
+    "2kk-04": {
+      "zdroj": "KOVARSKA_byt 4 a 8 003b ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — kuchyňská linka s varnou deskou a oknem",
+      "typ": "vizualizace"
+    },
+    "2kk-05": {
+      "zdroj": "KOVARSKA_byt 4 a 8 004 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — kuchyňský kout s troubou a lednicí",
+      "typ": "vizualizace"
+    },
+    "2kk-06": {
+      "zdroj": "KOVARSKA_byt 4 a 8 005 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — obytný prostor s pohovkou a křeslem",
+      "typ": "vizualizace"
+    },
+    "2kk-07": {
+      "zdroj": "KOVARSKA_byt 4 a 8 006 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — obytný prostor s prosklenou příčkou",
+      "typ": "vizualizace"
+    },
+    "2kk-08": {
+      "zdroj": "KOVARSKA_byt 4 a 8 007 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — vstupní chodba s prosklenou příčkou",
+      "typ": "vizualizace"
+    },
+    "2kk-09": {
+      "zdroj": "KOVARSKA_byt 4 a 8 008 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — obytný prostor s výhledem na balkon",
+      "typ": "vizualizace"
+    },
+    "2kk-10": {
+      "zdroj": "KOVARSKA_byt 4 a 8 009 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — obytný prostor s jídelním stolem u okna",
+      "typ": "vizualizace"
+    },
+    "2kk-11": {
+      "zdroj": "KOVARSKA_byt 4 a 8 010 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — obytný prostor s televizní stěnou a výhledem",
+      "typ": "vizualizace"
+    },
+    "2kk-12": {
+      "zdroj": "KOVARSKA_byt 4 a 8 010b ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 2+kk — obytný prostor s pohovkou a televizní stěnou",
+      "typ": "vizualizace"
+    },
+    "3kk-01": {
+      "zdroj": "KOVARSKA_byt 13 001 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — obytný prostor s kuchyní a schodištěm na galerii",
+      "typ": "vizualizace"
+    },
+    "3kk-02": {
+      "zdroj": "KOVARSKA_byt 13 001b ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — kuchyňská linka, jídelní stůl a schodiště",
+      "typ": "vizualizace"
+    },
+    "3kk-03": {
+      "zdroj": "KOVARSKA_byt 13 002 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — obytný prostor s pohovkou, kuchyní a schodištěm",
+      "typ": "vizualizace"
+    },
+    "3kk-04": {
+      "zdroj": "KOVARSKA_byt 13 002b ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — pohled na kuchyň a schodiště na galerii",
+      "typ": "vizualizace"
+    },
+    "3kk-05": {
+      "zdroj": "KOVARSKA_byt 13 002c ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — obytný prostor s pohovkou a jídelním stolem",
+      "typ": "vizualizace"
+    },
+    "3kk-06": {
+      "zdroj": "KOVARSKA_byt 13 003 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — obytný prostor s prosklenou stěnou na balkon",
+      "typ": "vizualizace"
+    },
+    "3kk-07": {
+      "zdroj": "KOVARSKA_byt 13 003b ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — jídelní stůl u prosklené stěny",
+      "typ": "vizualizace"
+    },
+    "3kk-08": {
+      "zdroj": "KOVARSKA_byt 13 004 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — obytný prostor se schodištěm a kuchyní",
+      "typ": "vizualizace"
+    },
+    "3kk-09": {
+      "zdroj": "KOVARSKA_byt 13 005 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — ložnice s vestavěnými skříněmi",
+      "typ": "vizualizace"
+    },
+    "3kk-10": {
+      "zdroj": "KOVARSKA_byt 13 006 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — ložnice v podkroví se zrcadlem",
+      "typ": "vizualizace"
+    },
+    "3kk-11": {
+      "zdroj": "KOVARSKA_byt 13 007 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — ložnice v podkroví se střešním oknem",
+      "typ": "vizualizace"
+    },
+    "3kk-12": {
+      "zdroj": "KOVARSKA_byt 13 007b ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — ložnice v podkroví s postelí a křeslem",
+      "typ": "vizualizace"
+    },
+    "3kk-13": {
+      "zdroj": "KOVARSKA_byt 13 008 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — ložnice v podkroví, pohled ke dveřím",
+      "typ": "vizualizace"
+    },
+    "3kk-14": {
+      "zdroj": "KOVARSKA_byt 13 009 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — chodba se schodištěm a dveřmi do pokojů",
+      "typ": "vizualizace"
+    },
+    "3kk-15": {
+      "zdroj": "KOVARSKA_byt 13 010 ve velké velikosti.png",
+      "alt": "Vizualizace apartmánu 3+kk — dětský pokoj s pracovním stolem",
+      "typ": "vizualizace"
+    },
     "krusne-hory-lanovka": {
       "zdroj": "krusne-hory-lanovka.jpg",
       "alt": "Lanovka a sjezdovka v Krušných horách v zimě",
@@ -276,14 +511,51 @@
       "typ": "fotografie",
       "_puvod": "Převzato ze zdrojů sesterského projektu (název souboru odpovídá Pixabay). PŘED SPUŠTĚNÍM OVĚŘIT LICENCI."
     },
-
-    "makler": { "zdroj": "david_choc.png", "alt": "David Choc, realitní specialista", "typ": "portret" }
+    "makler": {
+      "zdroj": "david_choc.png",
+      "alt": "David Choc, realitní specialista",
+      "typ": "portret"
+    }
   },
-
   "galerie": [
-    "budova-zahrada", "budova-ulice",
-    "3kk-01", "3kk-03", "3kk-02", "3kk-04", "3kk-05",
-    "2kk-01", "2kk-02", "2kk-03", "2kk-04", "2kk-05",
-    "1kk-01", "1kk-02", "1kk-04", "1kk-03", "1kk-05"
+    "budova-zahrada",
+    "budova-ulice",
+    "3kk-01",
+    "3kk-02",
+    "3kk-03",
+    "3kk-04",
+    "3kk-05",
+    "3kk-06",
+    "3kk-07",
+    "3kk-08",
+    "3kk-09",
+    "3kk-10",
+    "3kk-11",
+    "3kk-12",
+    "3kk-13",
+    "3kk-14",
+    "3kk-15",
+    "2kk-01",
+    "2kk-02",
+    "2kk-03",
+    "2kk-04",
+    "2kk-05",
+    "2kk-06",
+    "2kk-07",
+    "2kk-08",
+    "2kk-09",
+    "2kk-10",
+    "2kk-11",
+    "2kk-12",
+    "1kk-01",
+    "1kk-02",
+    "1kk-03",
+    "1kk-04",
+    "1kk-05",
+    "1kk-06",
+    "1kk-07",
+    "1kk-08",
+    "1kk-09",
+    "1kk-10"
   ]
 }
