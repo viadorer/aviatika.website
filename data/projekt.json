@@ -20,7 +20,7 @@
     "makler_tel": "+420 774 052 232",
     "makler_tel_link": "+420774052232",
     "makler_email": "david.choc@ptf.cz",
-    "makler_praxe": "30+ let zkušeností na realitním trhu",
+    "makler_praxe": "30+ let na realitním trhu",
     "firma_email": "info@ptf.cz",
     "kancelar_tel": "+420 603 843 921",
     "kancelar_tel_link": "+420603843921",
@@ -39,13 +39,13 @@
         "klic": "nemovitost",
         "ikona": "budova",
         "nazev": "Nemovitost",
-        "popis": "Pozemek a objekt v centru Kovářské, na náměstí J. Švermy, s výhledem do hřebene Krušných hor."
+        "popis": "Pozemek a objekt v centru Kovářské, na náměstí J. Švermy, s výhledem na hřeben Krušných hor."
       },
       {
         "klic": "stavba",
         "ikona": "kladivo",
         "nazev": "Rozestavěná stavba",
-        "popis": "Hrubá stavba v pokročilé fázi. Navazuje se okamžitě, bez demolic a bez přípravné fáze."
+        "popis": "Hrubá stavba v pokročilé fázi. Dá se na ni rovnou navázat, bez demolic a bez přípravných prací."
       },
       {
         "klic": "material",
@@ -91,15 +91,15 @@
       "typ": "1+kk",
       "nazev": "Apartmán 1+kk",
       "plocha": "36–52 m²",
-      "perex": "Účelně řešený prostor pro dva. Nejrychleji obsaditelná jednotka v celoročním provozu.",
+      "perex": "Účelně řešený prostor pro dva. Nejsnáz se pronajme a udrží obsazenost i mimo hlavní sezónu.",
       "mistnosti": [
         "Vstupní chodba se šatnou",
-        "Obývací pokoj s kuchyňským koutem",
+        "Obytný prostor s kuchyňským koutem",
         "Koupelna s WC"
       ],
       "parametry": [
         "Terasa až 12,71 m²",
-        "Sklep / koje 2,4–4,3 m²"
+        "Sklep / kóje 2,4–4,3 m²"
       ],
       "foto": [
         "1kk-01",
@@ -119,7 +119,7 @@
       "typ": "2+kk",
       "nazev": "Apartmán 2+kk",
       "plocha": "48–53 m²",
-      "perex": "Oddělená ložnice a velký obytný prostor. Typ s nejširší cílovou skupinou — páry i rodiny.",
+      "perex": "Oddělená ložnice a velký obytný prostor. Typ, o který bývá největší zájem — od párů po rodiny.",
       "mistnosti": [
         "Vstupní chodba se šatnou",
         "Samostatná ložnice",
@@ -128,7 +128,7 @@
       ],
       "parametry": [
         "Terasa až 12,71 m²",
-        "Sklep / koje 2,4–4,3 m²"
+        "Sklep / kóje 2,4–4,3 m²"
       ],
       "foto": [
         "2kk-01",
@@ -160,7 +160,7 @@
       ],
       "parametry": [
         "Panoramatický výhled",
-        "Sklep / koje 2,4–4,3 m²"
+        "Sklep / kóje 2,4–4,3 m²"
       ],
       "foto": [
         "3kk-01",
@@ -185,7 +185,7 @@
   "vybaveni_poznamka": "Vybavení zobrazené ve vizualizacích není součástí prodeje.",
   "vizualizace_poznamka": "Obrázky jsou architektonické vizualizace dokončeného stavu, nikoli fotografie současného stavu objektu.",
   "lokalita": {
-    "perex": "Kovářská leží v hřebeni Krušných hor mezi Klínovcem a německou hranicí. Zimní i letní sezóna se tu překrývají, takže objekt má využití celý rok.",
+    "perex": "Kovářská leží v Krušných horách pod Klínovcem, pár kilometrů od saské hranice. Má plnou zimní i letní sezónu, takže objekt se dá provozovat po celý rok.",
     "skupiny": [
       {
         "nazev": "Ski areály",
@@ -264,7 +264,7 @@
         "nazev": "Léto na hřebeni",
         "ikona": "turistika",
         "foto": "krusne-hory-inverze",
-        "popis": "Přímo od objektu vede síť značených tras i cyklostezek do hřebenových partií Krušných hor.",
+        "popis": "Přímo od objektu vede síť značených tras i cyklostezek do hřebenových partií hor.",
         "polozky": [
           "Červená: Klínovec – Boží Dar (8 km)",
           "Modrá: Kovářská – Meštery (5 km)",
@@ -276,7 +276,7 @@
         "nazev": "Zimní sezóna",
         "ikona": "lyze",
         "foto": "krusne-hory-lanovka",
-        "popis": "Nejbližší vlek je pár minut chůze, velké areály do 25 minut autem.",
+        "popis": "K nejbližšímu vleku je to pár minut pěšky, velké areály do 25 minut autem.",
         "polozky": [
           "Ski areál Kovářská (5 min chůze)",
           "Klínovec — největší areál Krušných hor",
@@ -287,7 +287,7 @@
         "nazev": "Klínovec",
         "ikona": "hora",
         "foto": "krusne-hory-hreben",
-        "popis": "Nejvyšší hora Krušných hor (1 244 m) s rozhlednou je 15 minut autem. Táhne návštěvnost regionu celoročně.",
+        "popis": "Nejvyšší hora Krušných hor (1 244 m) s rozhlednou je 15 minut autem. Přitahuje návštěvníky po celý rok.",
         "polozky": [
           "Rozhledna s výhledem do Čech i Saska",
           "Bikepark a singletracky v létě",

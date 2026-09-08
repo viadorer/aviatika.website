@@ -19,7 +19,8 @@ P = D["prodej"]
 M = D["model_vynosu"]
 FOTO = {k: v for k, v in D["foto"].items() if not k.startswith("_")}
 
-DNES = date.today().isoformat()
+DNES = date.today().strftime("%-d. %-m. %Y")   # české datum, ne ISO
+DNES_ISO = date.today().isoformat()            # sitemap potřebuje ISO
 
 
 # ---------------------------------------------------------------- pomocné
@@ -341,8 +342,8 @@ def model_dlazdice():
     """Modelová čísla vždy s viditelnou poznámkou — jde o odhad, ne o příslib."""
     polozky = [
         (f"{M['roi_pct_min']}–{M['roi_pct_max']} %", "Modelové zhodnocení při dokončení"),
-        (f"{mil(M['prijem_rocne_min'])}–{mil(M['prijem_rocne_max'])}", "Modelový roční příjem z provozu"),
-        (f"{mil(M['hodnota_po_dokonceni_min'])}–{mil(M['hodnota_po_dokonceni_max'])}", "Odhad hodnoty po dokončení"),
+        (f"{mil(M['prijem_rocne_min']).replace(' mil.', '')}–{mil(M['prijem_rocne_max'])}", "Modelový roční příjem z provozu"),
+        (f"{mil(M['hodnota_po_dokonceni_min']).replace(' mil.', '')}–{mil(M['hodnota_po_dokonceni_max'])}", "Odhad hodnoty po dokončení"),
     ]
     karty = "".join(
         f'<div class="card"><b style="display:block;font:500 clamp(1.7rem,3vw,2.4rem)/1.1 var(--serif);'
@@ -384,7 +385,7 @@ def page_index():
       <b>{czk(P['cena'])}</b><span>za celý projekt</span>
     </div>
     <p class="lead">{esc(P['predmet_souhrn'])} — vše v jedné transakci.
-      Povolovací proces je za vámi, materiál je na místě, navazuje se stavbou.</p>
+      Povolovací řízení už proběhlo, materiál je na místě. Dá se rovnou stavět.</p>
     <div class="btn-row">
       <a class="btn btn--primary" href="/predmet-prodeje/">Co přesně se prodává</a>
       <a class="btn btn--light" href="/investice/">Spočítat návratnost</a>
@@ -407,8 +408,8 @@ def page_index():
     <div class="section-head">
       <p class="eyebrow">Předmět prodeje</p>
       <h2>Čtyři věci, které kupujete najednou</h2>
-      <p>Prodává se celek, ne pozemek s příslibem. Každá z těchto částí by se sháněla
-         zvlášť měsíce — tady jsou pohromadě a v ceně.</p>
+      <p>Prodává se celek, ne pozemek s příslibem. Sehnat každou z těchto částí zvlášť
+         by trvalo měsíce — tady jsou pohromadě a v ceně.</p>
     </div>
     <div class="grid grid--4">{polozky}</div>
     {'<div class="note mt">' + ico('info', 'ico ico--sm') + '<div>' + esc(dph) + '</div></div>' if dph else ''}
@@ -445,8 +446,8 @@ def page_index():
     <div class="section-head">
       <p class="eyebrow">Skladba projektu</p>
       <h2>Tři typy dispozic</h2>
-      <p>Projekt počítá s apartmány od kompaktních 1+kk po 90m² 3+kk.
-         Mix, který pokrývá páry, rodiny i delší pobyty.</p>
+      <p>Projekt počítá s apartmány od kompaktních 1+kk po 3+kk o 90 m².
+         Skladba, která pokryje páry, rodiny i delší pobyty.</p>
     </div>
     <div class="grid grid--3">{dispozice}</div>
     <div class="btn-row mt">
@@ -475,8 +476,8 @@ def page_index():
     <div class="section-head">
       <p class="eyebrow">Investiční potenciál</p>
       <h2>Proč zrovna Krušné hory</h2>
-      <p>Zimní i letní sezóna se v Kovářské překrývají — objekt má využití celý rok,
-         ne jen čtyři měsíce.</p>
+      <p>Kovářská má plnou zimní i letní sezónu. Objekt se dá provozovat po celý rok,
+         ne jen čtyři měsíce v zimě.</p>
     </div>
     {model_dlazdice()}
     <div class="btn-row mt">
@@ -508,7 +509,7 @@ def page_index():
   </div>
 </section>
 
-{cta_band('Prohlídku domluvíme do týdne',
+{cta_band('Prohlídku domluvíme podle vás',
           'Projekt je možné vidět na místě včetně dokumentace a soupisu materiálu. '
           'Ozvěte se a domluvíme termín.')}"""
 
@@ -558,8 +559,8 @@ def page_predmet():
       <p class="caption">Vizualizace uličního průčelí.</p>
     </div>
     <div>
-      <p class="eyebrow">Proč to zkracuje cestu</p>
-      <h2>Povolovací proces máte za sebou</h2>
+      <p class="eyebrow">Co tím získáte</p>
+      <h2>Povolovací řízení už proběhlo</h2>
       <p class="lead mt-sm">U srovnatelného projektu na zelené louce se počítá s měsíci
         na územní řízení, stavební povolení a projekt. Tady je to hotové a platné.</p>
       <ul class="ticks mt">
@@ -650,7 +651,7 @@ def page_investice():
   <div class="wrap">
     <p class="eyebrow">Investice</p>
     <h1>Kalkulačka návratnosti projektu</h1>
-    <p class="lead">Posuňte parametry podle svého záměru a uvidíte, jak se mění
+    <p class="lead">Nastavte parametry podle svého záměru a uvidíte, jak se mění
        cash flow a celkový výnos. Všechna čísla jsou modelová.</p>
   </div>
 </section>
@@ -784,7 +785,7 @@ def page_lokalita():
     telo = f"""<section class="page-head">
   <div class="wrap">
     <p class="eyebrow">Lokalita</p>
-    <h1>Kovářská v hřebeni Krušných hor</h1>
+    <h1>Kovářská pod Klínovcem</h1>
     <p class="lead">{esc(D['lokalita']['perex'])}</p>
     <p class="caption">{esc(W['adresa_objektu'])}</p>
   </div>
@@ -811,7 +812,7 @@ def page_lokalita():
     return stranka(
         "lokalita/index.html",
         f"Lokalita Kovářská — {W['nazev']}",
-        "Kovářská v hřebeni Krušných hor: 15 minut na Klínovec, 45 minut do Karlových Varů, "
+        "Kovářská v Krušných horách pod Klínovcem: 15 minut do areálu, 45 minut do Karlových Varů, "
         "celoroční sezóna a kompletní občanská vybavenost v místě.",
         telo, aktivni="lokalita/", leaflet=True, og="krusne-hory-inverze",
     )
@@ -1053,7 +1054,7 @@ def page_404():
     telo = f"""<section class="page-head">
   <div class="wrap">
     <p class="eyebrow">Chyba 404</p>
-    <h1>Tuhle stránku jsme nenašli</h1>
+    <h1>Tuto stránku jsme nenašli</h1>
     <p class="lead">Odkaz je nejspíš zastaralý. Zkuste některou z hlavních stránek.</p>
     <div class="btn-row mt">
       <a class="btn btn--primary" href="/">Na úvod</a>
@@ -1092,7 +1093,7 @@ def doplnky():
             "lokalita/", "galerie/", "kontakt/",
             "ochrana-osobnich-udaju/", "zasady-pouzivani-cookies/"]
     polozky = "".join(
-        f"  <url><loc>{W['url']}/{u}</loc><lastmod>{DNES}</lastmod>"
+        f"  <url><loc>{W['url']}/{u}</loc><lastmod>{DNES_ISO}</lastmod>"
         f"<priority>{'1.0' if u == '' else '0.8' if u in ('predmet-prodeje/', 'investice/') else '0.6'}</priority></url>\n"
         for u in urls
     )
