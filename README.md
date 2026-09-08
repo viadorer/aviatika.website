@@ -76,6 +76,11 @@ co ještě čeká na doplnění.
 - [ ] **Prodávající** — web uvádí PTF Reality, s.r.o., IČO 06684394 (Plzeň).
       Sesterský projekt prodává PTF reality PRAHA s.r.o., IČO 07666969.
       Zkontrolovat, která entita prodává tenhle projekt.
+- [ ] **Turistické trasy a vzdálenosti v lokalitě** — původní web uváděl trasu
+      „Kovářská – Meštery (5 km)“; takové místo v okolí Kovářské není, položka byla
+      nahrazena doloženými cíli (Velký Špičák, Měděnec, Klínovec). Barvy značek
+      a kilometry ověřit u KČT. Neověřené jsou i vzdálenosti v bloku
+      `lokalita.skupiny` (občanská vybavenost, dojezdové časy) — převzato z původního webu.
 - [ ] **Půdorysy jednotek** — do `web/assets/doc/`, odkázat ze skladby projektu.
 - [ ] **Fotografie skutečného stavu stavby** — dnes web ukazuje jen vizualizace
       a všude to říká nahlas. Reálné fotky by prodeji pomohly.

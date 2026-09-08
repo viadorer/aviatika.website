@@ -228,7 +228,7 @@ def paticka():
   <button class="lb-close" aria-label="Zavřít">{ico('zavrit')}</button>
   <button class="lb-prev" aria-label="Předchozí">{ico('vlevo')}</button>
   <button class="lb-next" aria-label="Další">{ico('vpravo')}</button>
-  <img src="" alt="">
+  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
 </div>"""
 
 

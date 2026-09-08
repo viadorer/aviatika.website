@@ -266,11 +266,12 @@
         "foto": "krusne-hory-inverze",
         "popis": "Přímo od objektu vede síť značených tras i cyklostezek do hřebenových partií hor.",
         "polozky": [
-          "Červená: Klínovec – Boží Dar (8 km)",
-          "Modrá: Kovářská – Meštery (5 km)",
+          "Okruh na Velký Špičák a Měděnec",
+          "Hřebenovka na Klínovec a Boží Dar",
           "Krušnohorská magistrála přímo u objektu",
-          "Napojení na německé cyklostezky (5 km)"
-        ]
+          "Napojení na saskou síť cyklostezek"
+        ],
+        "_poznamka": "Značení tras a kilometry nejsou ověřené — původní web uváděl trasu na 'Meštery', což v okolí Kovářské není žádné místo. Cíle níž jsou doložené, barvy značek a vzdálenosti ověřit u KČT."
       },
       {
         "nazev": "Zimní sezóna",
