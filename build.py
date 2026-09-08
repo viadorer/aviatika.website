@@ -298,6 +298,14 @@ def cta_band(nadpis, text):
   <div>
     <h2>{nadpis}</h2>
     <p class="mt-sm">{text}</p>
+    <div class="cta-band__person">
+      {obr('makler', 'portret', '112px')}
+      <div>
+        <b>{esc(W['makler'])}</b>
+        <span>{esc(W['makler_role'])} · {esc(W['makler_praxe'])}</span>
+        <a href="mailto:{W['makler_email']}">{esc(W['makler_email'])}</a>
+      </div>
+    </div>
   </div>
   <div class="btn-row" style="justify-content:flex-end">
     <a class="btn btn--light" href="tel:{W['makler_tel_link']}">{esc(W['makler_tel'])}</a>
@@ -339,21 +347,57 @@ def formular(zajem="Koupě celého projektu"):
 
 
 def model_dlazdice():
-    """Modelová čísla vždy s viditelnou poznámkou — jde o odhad, ne o příslib."""
+    """Dlaždice se počítají ze stejného bloku jako kalkulačka pod nimi.
+
+    Dřív byly hodnoty zadané ručně vedle kalkulačky a rozcházely se s ní:
+    deklarovaný příjem 1,5–2,5 mil. odpovídal zhruba pěti jednotkám, zatímco
+    kalkulačka počítala s dvaceti. Odvozením se to nemůže opakovat."""
+    K = D["kalkulacka"]
+    investice = P["cena"] + K["capex"]
+    trzby = K["pocet_jednotek"] * K["adr"] * K["obsazenost_dni"]
+    cisty = trzby * (1 - K["opex_pct"] / 100)
+    h_min, h_max = M["hodnota_po_dokonceni_min"], M["hodnota_po_dokonceni_max"]
+
+    # Zhodnocení má smysl jen proti úplné investici. Bez CAPEX by se poměřovalo
+    # s cenou hrubé stavby a vyšlo by násobně vyšší, než jaké reálně je.
+    if K["capex"] > 0:
+        z_min = (h_min / investice - 1) * 100
+        z_max = (h_max / investice - 1) * 100
+        # Typografické minus, ne spojovník.
+        zhodnoceni = f"{z_min:+.0f} % až {z_max:+.0f} %".replace("-", "\u2212")
+        zhodnoceni_popis = "Zhodnocení proti celkové investici"
+    else:
+        zhodnoceni = "—"
+        zhodnoceni_popis = "Zhodnocení — doplňte náklady na dokončení"
+
     polozky = [
-        (f"{M['roi_pct_min']}–{M['roi_pct_max']} %", "Modelové zhodnocení při dokončení"),
-        (f"{mil(M['prijem_rocne_min']).replace(' mil.', '')}–{mil(M['prijem_rocne_max'])}", "Modelový roční příjem z provozu"),
-        (f"{mil(M['hodnota_po_dokonceni_min']).replace(' mil.', '')}–{mil(M['hodnota_po_dokonceni_max'])}", "Odhad hodnoty po dokončení"),
+        (czk(cisty), "Modelový čistý roční výnos z provozu"),
+        (f"{mil(h_min).replace(' mil.', '')}–{mil(h_max)}", "Odhad hodnoty po dokončení"),
+        (zhodnoceni, zhodnoceni_popis),
     ]
     karty = "".join(
-        f'<div class="card"><b style="display:block;font:500 clamp(1.7rem,3vw,2.4rem)/1.1 var(--serif);'
+        f'<div class="card"><b style="display:block;font:500 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--serif);'
         f'letter-spacing:-.02em;color:var(--brand)">{c}</b>'
-        f'<p style="margin-top:12px">{p}</p></div>'
-        for c, p in polozky
+        f'<p style="margin-top:12px">{p_}</p></div>'
+        for c, p_ in polozky
     )
+
+    predpoklady = (f"{K['pocet_jednotek']} jednotek · {czk(K['adr'])} za noc · "
+                   f"{K['obsazenost_dni']} obsazených nocí · provozní náklady {K['opex_pct']} % · "
+                   f"náklady na dokončení {czk(K['capex'])}")
+
+    varovani = ""
+    if K["capex"] > 0 and h_max < investice:
+        varovani = (f'<div class="note mt-sm">{ico("info", "ico ico--sm")}<div>'
+                    f'<strong>Pozor.</strong> Odhad hodnoty po dokončení ({mil(h_max)}) je nižší '
+                    f'než celková investice ({czk(investice)}). Při těchto parametrech by projekt '
+                    f'skončil ve ztrátě — čísla je potřeba přepočítat.</div></div>')
+
     return f"""<div class="grid grid--3">{karty}</div>
-<div class="note mt">{ico('info', 'ico ico--sm')}<div><strong>Modelový propočet.</strong>
-  {esc(M['disclaimer'])}</div></div>"""
+<p class="caption mt-sm">Předpoklady: {predpoklady}. Změnou parametrů v kalkulačce se
+   mění i tato čísla.</p>
+<div class="note mt-sm">{ico('info', 'ico ico--sm')}<div><strong>Modelový propočet.</strong>
+  {esc(M['disclaimer'])}</div></div>{varovani}"""
 
 
 # ---------------------------------------------------------------- stránky
@@ -874,7 +918,7 @@ def page_kontakt():
     <div>
       <div class="card">
         <div class="person">
-          {obr('makler', 'shot shot--free', '96px')}
+          {obr('makler', 'portret', '112px')}
           <div>
             <h3>{esc(W['makler'])}</h3>
             <p>{esc(W['makler_role'])} · {esc(W['makler_praxe'])}</p>

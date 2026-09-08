@@ -22,6 +22,7 @@
   --line-soft:#F0EEE9;
 
   --gold:#B08544;
+  --zluta:#FED439;   /* pozadí portrétu makléře — odebráno přímo z fotky */
 
   --wrap:1200px;
   --wrap-narrow:760px;
@@ -369,7 +370,16 @@ figure{margin:0}
 
 /* ---------- kontaktní vizitka ---------- */
 .person{display:flex;gap:22px;align-items:center}
-.person img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line)}
+.portret{
+  width:var(--portret,112px);height:var(--portret,112px);flex:none;
+  border-radius:50%;overflow:hidden;background:var(--zluta);
+  box-shadow:0 0 0 4px var(--zluta);
+}
+/* Portrét je čtvercový a rámeček taky, takže se nic neořezává — kulatý tvar
+   vznikne jen zaoblením. Žluté pozadí za obrázkem drží barvu i v prstenci,
+   aby přechod fotky do rámečku nebyl vidět. */
+.portret img{width:100%;height:100%;object-fit:cover;display:block}
+.person img{width:100%;height:100%}
 .person h3{margin-bottom:4px}
 .person p{color:var(--muted);font-size:.92rem;margin:0 0 14px}
 .person a{display:block;font-size:.98rem;text-decoration:none;font-weight:500;padding:2px 0}
@@ -380,6 +390,12 @@ figure{margin:0}
 .cta-band h2{color:#fff;max-width:18ch}
 .cta-band p{color:rgba(255,255,255,.76);max-width:54ch}
 .cta-band .split{align-items:center}
+.cta-band__person{display:flex;gap:20px;align-items:center;margin-top:26px}
+.cta-band__person b{display:block;font:600 1rem/1.3 var(--sans);color:#fff}
+.cta-band__person span{display:block;font-size:.88rem;color:rgba(255,255,255,.66);margin-top:3px}
+.cta-band__person a{color:#fff;text-decoration:none;font-weight:500;font-size:.95rem}
+.cta-band__person a:hover{text-decoration:underline}
+@media (max-width:600px){.cta-band__person{--portret:88px}}
 
 /* ---------- galerie / lightbox ---------- */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px)}

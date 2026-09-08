@@ -63,14 +63,12 @@
     "rozsiritelnost": "Projekt je rozšiřitelný o další fáze výstavby."
   },
   "model_vynosu": {
-    "_upozorneni": "MODELOVÁ ČÍSLA — nejde o zaručený ani nabízený výnos. Web je vypisuje výhradně s viditelnou poznámkou, že jde o odhad kupujícího. Před spuštěním ověřit u klienta a případně podložit propočtem.",
-    "roi_pct_min": 50,
-    "roi_pct_max": 80,
-    "prijem_rocne_min": 1500000,
-    "prijem_rocne_max": 2500000,
+    "_upozorneni": "MODELOVÁ ČÍSLA — nejde o zaručený ani nabízený výnos.",
+    "_odvozeni": "Roční výnos i zhodnocení se dopočítávají z bloku kalkulacka, aby dlaždice nemohly tvrdit něco jiného než kalkulačka pod nimi. Zadává se samostatně jen hodnota po dokončení — tu z provozního modelu odvodit nelze.",
     "hodnota_po_dokonceni_min": 15000000,
     "hodnota_po_dokonceni_max": 18000000,
-    "disclaimer": "Uvedená čísla jsou modelovým odhadem při dokončení a plném provozu objektu. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, obsazenosti, cenové hladině a způsobu provozu."
+    "_hodnota_poznamka": "NEOVĚŘENO, převzato z původního webu. Musí být vyšší než cena + CAPEX, jinak projekt vychází ztrátově. Při CAPEX 17 mil. je investice 24,9 mil., tedy o 7–10 mil. nad touto hodnotou.",
+    "disclaimer": "Uvedená čísla vycházejí z výchozího nastavení kalkulačky níže a mění se s ním. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, obsazenosti, cenové hladině a způsobu provozu."
   },
   "kalkulacka": {
     "_upozorneni": "Výchozí parametry kalkulačky. Sazby a obsazenost ověřit před spuštěním webu.",
