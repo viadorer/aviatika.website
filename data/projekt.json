@@ -63,11 +63,11 @@
     "rozsiritelnost": "Projekt je rozšiřitelný o další fáze výstavby."
   },
   "model_vynosu": {
-    "_navod": "Až bude odhad hodnoty po dokončení podložený, vyplňte obě čísla a web sám přidá dlaždici s hodnotou i s rozdílem, ze kterého se hradí dostavba. Dokud jsou null, sekce ukazuje jen ověřená fakta a žádnou hodnotu netvrdí.",
-    "hodnota_po_dokonceni_min": null,
-    "hodnota_po_dokonceni_max": null,
-    "_proc_odstraneno": "Původní web uváděl 15–18 mil. Při cenách dokončených apartmánů v Kovářské (Apartmány Avionika, stejný prodejce: 15 jednotek, 392 m², 89 252 Kč/m²) by 15–18 mil. odpovídalo jen 168–202 m² prodejné plochy, tedy zhruba čtyřem bytům. Kalkulačka přitom počítá s dvaceti jednotkami. Číslo se nepodařilo doložit, proto se nezveřejňuje.",
-    "disclaimer": "Odhad hodnoty po dokončení je kvalifikovaný odhad, ne ocenění znalcem. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, kvalitě provedení a cenové hladině v době prodeje."
+    "_navod": "Hodnotu po dokončení web vypisuje jen když jsou obě čísla vyplněná. Řídí dlaždici s hodnotou i s rozdílem, ze kterého se hradí dostavba.",
+    "hodnota_po_dokonceni_min": 50000000,
+    "hodnota_po_dokonceni_max": 60000000,
+    "disclaimer": "Odhad hodnoty po dokončení je kvalifikovaný odhad, ne ocenění znalcem. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, kvalitě provedení a cenové hladině v době prodeje.",
+    "_zdroj": "Odhad prodávajícího (David Choc, 9/2026). Odpovídá cenové hladině dokončených apartmánů v Kovářské — sesterský projekt Apartmány Avionika prodává 392 m² za 34,95 mil., tedy 89 252 Kč/m². Původní web uváděl 15–18 mil., což bylo o řád vedle."
   },
   "kalkulacka": {
     "_upozorneni": "Výchozí parametry kalkulačky. Sazby a obsazenost ověřit před spuštěním webu.",

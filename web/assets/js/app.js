@@ -129,6 +129,11 @@
       var cashflow  = cisty - rocneUver;
       var celkovy   = cashflow + umoreni + prirustek;
       var vynos     = vlastni > 0 ? (celkovy / vlastni) * 100 : 0;
+      /* Hotovostní (cash-on-cash) výnos počítá jen s penězi, které opravdu
+         přitečou. Celkový výnos k nim přičítá umořenou jistinu a zhodnocení
+         nemovitosti — obojí zvyšuje majetek, ale ne hotovost, a při vysoké
+         páce dokáže výsledné procento několikanásobně nafouknout. */
+      var vynosCash = vlastni > 0 ? (cashflow / vlastni) * 100 : 0;
 
       set('investice', czk(investice));
       set('vlastni', czk(vlastni));
@@ -146,6 +151,7 @@
       /* Bez CAPEX je výnos spočítaný z nedostavěného objektu. Číslo se proto
          vůbec nezobrazí — jinak by headline tvrdil stovky procent ročně. */
       set('vynos', capex > 0 ? vynos.toFixed(1).replace('.', ',') + ' % ročně' : '—');
+      set('vynos-cash', capex > 0 ? vynosCash.toFixed(1).replace('.', ',') + ' % ročně' : '—');
 
       popisek('vlastni', vlastniPct + ' %');
       popisek('urok', urok.toFixed(2).replace('.', ',') + ' %');

@@ -761,14 +761,15 @@ def page_investice():
         <div class="out" style="margin-top:22px"><span>Umořená jistina (nehotovostní)</span><b id="out-umoreni"></b></div>
         <div class="out"><span>Zhodnocení nemovitosti (nehotovostní)</span><b id="out-prirustek"></b></div>
         <div class="out"><span>Celkový roční přínos</span><b id="out-celkovy"></b></div>
-        <div class="out out--hero"><span>Výnos z vlastních zdrojů</span><b id="out-vynos"></b></div>
+        <div class="out"><span>Hotovostní výnos z vlastních zdrojů</span><b id="out-vynos-cash"></b></div>
+        <div class="out out--hero"><span>Celkový výnos včetně nehotovostních položek</span><b id="out-vynos"></b></div>
         </div>
         <p class="calc-warn" id="calc-warn" role="status" aria-live="polite"></p>
       </div>
     </div>
 
     <div class="note mt">{ico('info', 'ico ico--sm')}<div>
-      <strong>Jak číst výsledek.</strong> Provozní cash flow je jediná položka, která
+      <strong>Jak číst výsledek.</strong> Hotovostní výnos počítá jen s penězi, které opravdu přitečou na účet. Celkový výnos k nim přičítá umořenou jistinu a zhodnocení nemovitosti — to jsou nehotovostní položky, které při vysoké páce dokážou procento výrazně nafouknout. Provozní cash flow je jediná položka, která
       skutečně přiteče na účet. Umořená jistina a zhodnocení nemovitosti jsou nehotovostní —
       zvyšují majetek, ne hotovost, a proto se vykazují odděleně.
       Do provozních nákladů patří personál, energie, úklid, praní, pojištění, správa

@@ -77,16 +77,13 @@ co ještě čeká na doplnění.
       Při výchozích hodnotách vycházel čistý zisk 5,9 mil. ročně proti kupní ceně
       7,9 mil., tedy návratnost 16 měsíců. Proto se provozní model už neukazuje
       jako headline — je jen v kalkulačce, kde si ho návštěvník zadá sám.
-- [ ] **Odhad hodnoty po dokončení — dnes se nezveřejňuje.**
-      Původní web tvrdil 15–18 mil. Nepodařilo se to doložit a proti vašim
-      vlastním cenám to nesedí: Apartmány Avionika v téže obci prodávají
-      15 dokončených jednotek o 392 m² za 34,95 mil., tedy 89 252 Kč/m².
-      Při té hladině by 15–18 mil. odpovídalo jen 168–202 m² prodejné plochy,
-      zhruba čtyřem bytům — zatímco kalkulačka počítá s dvaceti jednotkami.
-      Klíče `hodnota_po_dokonceni_min/max` jsou proto `null` a sekce zatím
-      ukazuje jen ověřená fakta. Jakmile vyplníte obě čísla, web sám přidá
-      dlaždici s hodnotou i s rozdílem, ze kterého se hradí dostavba.
-      K doložení stačí buď ocenění, nebo prodejní ceník jednotek Aviatiky.
+- [x] **Odhad hodnoty po dokončení — doplněno 9/2026: 50–60 mil.**
+      Původní web tvrdil 15–18 mil. To bylo o řád vedle: při cenách dokončených
+      apartmánů v Kovářské (sesterský projekt, 392 m² za 34,95 mil. = 89 252 Kč/m²)
+      by 15–18 mil. odpovídalo jen ~180 m², tedy čtyřem bytům. Hodnotu opravil
+      prodávající na 50–60 mil., což s cenovou hladinou sedí.
+      Web z ní počítá dlaždici „Rozdíl, ze kterého se hradí dokončení“ (42,1–52,1 mil.).
+      Pro jistotu podložit ceníkem jednotek nebo oceněním — jde o nosné číslo.
 - [ ] **Prodávající** — web uvádí PTF Reality, s.r.o., IČO 06684394 (Plzeň).
       Sesterský projekt prodává PTF reality PRAHA s.r.o., IČO 07666969.
       Zkontrolovat, která entita prodává tenhle projekt.
