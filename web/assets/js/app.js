@@ -157,19 +157,17 @@
       var cfEl = document.getElementById('out-cashflow');
       if (cfEl) { cfEl.style.color = cashflow >= 0 ? '#8FD8B4' : '#F0A9A2'; }
 
-      /* Předmětem prodeje je hrubá stavba. Bez nákladů na dokončení model
-         počítá tržby z objektu, který se za nic nedostavěl — vyjde nesmyslně
-         vysoký výnos. Dokud je CAPEX nula, je potřeba to říct nahlas. */
-      var warn = document.getElementById('calc-warn');
-      if (warn) {
-        if (capex <= 0) {
-          warn.textContent = 'Doplňte náklady na dokončení. Prodává se hrubá stavba — '
-            + 'bez odhadu CAPEX model počítá tržby z objektu, který se dostavěl zadarmo, '
-            + 'a výnos proto vychází nereálně vysoký.';
-          warn.classList.add('is-on');
-        } else {
-          warn.classList.remove('is-on');
-        }
+      /* Předmětem prodeje je hrubá stavba. Bez nákladů na dokončení by model
+         počítal provoz objektu, který se dostavěl zadarmo: při výchozích
+         hodnotách vycházel čistý zisk 5,9 mil. ročně proti kupní ceně 7,9 mil.,
+         tedy návratnost 16 měsíců. Dokud CAPEX chybí, výsledky se proto
+         neukazují vůbec — ani dílčí. */
+      var vysledky = document.getElementById('calc-vysledky');
+      var prazdno  = document.getElementById('calc-empty');
+      if (vysledky && prazdno) {
+        var chybiCapex = !(capex > 0);
+        vysledky.hidden = chybiCapex;
+        prazdno.hidden  = !chybiCapex;
       }
     }
 

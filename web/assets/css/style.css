@@ -337,6 +337,11 @@ figure{margin:0}
 .out--hero{margin-top:8px;padding-top:22px;border-top:1px solid rgba(255,255,255,.3)}
 .out--hero span{color:rgba(255,255,255,.82);font-size:1rem}
 .out--hero b{font:500 clamp(1.4rem,2.4vw,1.9rem)/1.1 var(--serif)}
+.calc-empty{
+  margin:0;padding:20px 22px;border-radius:var(--r-sm);
+  background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.34);
+  font-size:.92rem;line-height:1.6;color:rgba(255,255,255,.88);
+}
 .calc-warn{display:none;margin:20px 0 0;padding:15px 18px;border-radius:var(--r-sm);
   background:rgba(255,255,255,.09);border:1px solid rgba(240,169,162,.5);
   font-size:.86rem;line-height:1.55;color:rgba(255,255,255,.9)}

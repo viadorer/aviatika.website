@@ -347,33 +347,20 @@ def formular(zajem="Koupě celého projektu"):
 
 
 def model_dlazdice():
-    """Dlaždice se počítají ze stejného bloku jako kalkulačka pod nimi.
+    """Tři čísla, která stojí jen na kupní ceně a na odhadu hodnoty po dokončení.
 
-    Dřív byly hodnoty zadané ručně vedle kalkulačky a rozcházely se s ní:
-    deklarovaný příjem 1,5–2,5 mil. odpovídal zhruba pěti jednotkám, zatímco
-    kalkulačka počítala s dvaceti. Odvozením se to nemůže opakovat."""
-    K = D["kalkulacka"]
-    investice = P["cena"] + K["capex"]
-    trzby = K["pocet_jednotek"] * K["adr"] * K["obsazenost_dni"]
-    cisty = trzby * (1 - K["opex_pct"] / 100)
+    Dřív tu byl modelový roční výnos z provozu. Ten ale stojí na počtu jednotek,
+    ceně za noc a obsazenosti — samá neověřená čísla. Při výchozím nastavení
+    vycházel čistý zisk 5,9 mil. ročně proti kupní ceně 7,9 mil., tedy návratnost
+    16 měsíců. Provozní model proto zůstal jen v kalkulačce, kde si ho návštěvník
+    zadá sám a vidí, z čeho vzešel."""
     h_min, h_max = M["hodnota_po_dokonceni_min"], M["hodnota_po_dokonceni_max"]
-
-    # Zhodnocení má smysl jen proti úplné investici. Bez CAPEX by se poměřovalo
-    # s cenou hrubé stavby a vyšlo by násobně vyšší, než jaké reálně je.
-    if K["capex"] > 0:
-        z_min = (h_min / investice - 1) * 100
-        z_max = (h_max / investice - 1) * 100
-        # Typografické minus, ne spojovník.
-        zhodnoceni = f"{z_min:+.0f} % až {z_max:+.0f} %".replace("-", "\u2212")
-        zhodnoceni_popis = "Zhodnocení proti celkové investici"
-    else:
-        zhodnoceni = "—"
-        zhodnoceni_popis = "Zhodnocení — doplňte náklady na dokončení"
+    r_min, r_max = h_min - P["cena"], h_max - P["cena"]
 
     polozky = [
-        (czk(cisty), "Modelový čistý roční výnos z provozu"),
+        (czk(P["cena"]), "Kupní cena projektu ve stavu hrubé stavby"),
         (f"{mil(h_min).replace(' mil.', '')}–{mil(h_max)}", "Odhad hodnoty po dokončení"),
-        (zhodnoceni, zhodnoceni_popis),
+        (f"{mil(r_min).replace(' mil.', '')}–{mil(r_max)}", "Rozdíl, ze kterého se hradí dokončení"),
     ]
     karty = "".join(
         f'<div class="card"><b style="display:block;font:500 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--serif);'
@@ -381,23 +368,11 @@ def model_dlazdice():
         f'<p style="margin-top:12px">{p_}</p></div>'
         for c, p_ in polozky
     )
-
-    predpoklady = (f"{K['pocet_jednotek']} jednotek · {czk(K['adr'])} za noc · "
-                   f"{K['obsazenost_dni']} obsazených nocí · provozní náklady {K['opex_pct']} % · "
-                   f"náklady na dokončení {czk(K['capex'])}")
-
-    varovani = ""
-    if K["capex"] > 0 and h_max < investice:
-        varovani = (f'<div class="note mt-sm">{ico("info", "ico ico--sm")}<div>'
-                    f'<strong>Pozor.</strong> Odhad hodnoty po dokončení ({mil(h_max)}) je nižší '
-                    f'než celková investice ({czk(investice)}). Při těchto parametrech by projekt '
-                    f'skončil ve ztrátě — čísla je potřeba přepočítat.</div></div>')
-
     return f"""<div class="grid grid--3">{karty}</div>
-<p class="caption mt-sm">Předpoklady: {predpoklady}. Změnou parametrů v kalkulačce se
-   mění i tato čísla.</p>
-<div class="note mt-sm">{ico('info', 'ico ico--sm')}<div><strong>Modelový propočet.</strong>
-  {esc(M['disclaimer'])}</div></div>{varovani}"""
+<div class="note mt">{ico('info', 'ico ico--sm')}<div><strong>Jak to číst.</strong>
+  Rozdíl mezi kupní cenou a odhadovanou hodnotou po dokončení je rozpočet na dostavbu.
+  Pokud dokončení vyjde levněji, je rozdíl ziskem; pokud dráž, projekt se do odhadu
+  nevejde. {esc(M['disclaimer'])}</div></div>"""
 
 
 # ---------------------------------------------------------------- stránky
@@ -717,7 +692,7 @@ def page_investice():
           <input type="number" id="calc-cena" value="{K['cena_projektu']}" step="100000" min="0">
         </div>
         <div class="field">
-          <label for="calc-capex">Náklady na dokončení (CAPEX)</label>
+          <label for="calc-capex"><span>Náklady na dokončení (CAPEX) <b style="color:var(--brand)">*</b></span></label>
           <input type="number" id="calc-capex" value="{K['capex']}" step="100000" min="0">
         </div>
         <div class="field">
@@ -757,6 +732,10 @@ def page_investice():
       <div class="calc__panel calc__panel--out">
         <h3>Výsledek</h3>
         <div class="mt-sm"></div>
+        <p class="calc-empty" id="calc-empty">Zadejte odhad nákladů na dokončení.
+          Předmětem prodeje je hrubá stavba — bez této částky nelze projekt spočítat
+          a jakýkoli výsledek by byl nesmyslný.</p>
+        <div id="calc-vysledky">
         <div class="out"><span>Celková investice</span><b id="out-investice"></b></div>
         <div class="out"><span>Z toho vlastní zdroje</span><b id="out-vlastni"></b></div>
         <div class="out"><span>Úvěr</span><b id="out-uver"></b></div>
@@ -773,6 +752,7 @@ def page_investice():
         <div class="out"><span>Zhodnocení nemovitosti (nehotovostní)</span><b id="out-prirustek"></b></div>
         <div class="out"><span>Celkový roční přínos</span><b id="out-celkovy"></b></div>
         <div class="out out--hero"><span>Výnos z vlastních zdrojů</span><b id="out-vynos"></b></div>
+        </div>
         <p class="calc-warn" id="calc-warn" role="status" aria-live="polite"></p>
       </div>
     </div>

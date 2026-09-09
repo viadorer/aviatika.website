@@ -64,27 +64,23 @@ co ještě čeká na doplnění.
 - [ ] **Licence tří fotek Krušných hor** — `krusne-hory-*.jpg` pocházejí ze
       zdrojů sesterského projektu penzionavionika.cz. Názvy souborů odpovídají
       Pixabay, ale původ není doložený. Ověřit, nebo nahradit vlastními.
-- [ ] **Sladit čísla projektu — nejdůležitější bod.** Deklarované hodnoty
-      z původního webu si odporovaly navzájem i s kalkulačkou:
+- [ ] **Provozní parametry kalkulačky — blok `kalkulacka`.** Výchozí hodnoty
+      pocházejí z původního webu a dávají nereálné výsledky:
 
-      | Tvrzení na webu | Co z něj plyne |
-      |---|---|
-      | roční příjem 1,5–2,5 mil. při 2 500 Kč/noc | asi 5,5 pronajímané jednotky, ne 20 |
-      | zhodnocení 50–80 % na hodnotu 15–18 mil. | CAPEX jen 0,4–4,1 mil. na dostavbu celého objektu |
-      | hodnota po dokončení 15–18 mil. | při CAPEX 17 mil. je investice 24,9 mil., tedy ztráta 7–10 mil. |
+      | Parametr | Hodnota | Problém |
+      |---|---|---|
+      | `capex` | 0 | Prodává se hrubá stavba, dostavba nemůže být zdarma. Web proto bez CAPEX výsledek vůbec nezobrazí. |
+      | `pocet_jednotek` | 20 | Web nikde neuvádí, kolik jednotek objekt má. Ověřit. |
+      | `adr` | 2 500 Kč | 20 × 2 500 × 182 = 9,1 mil. tržeb ročně. Ověřit. |
+      | `opex_pct` | 35 % | Na ubytovací provoz nízké — nezahrnuje personál, energie, úklid, praní, pojištění, správu ani provize portálů. Reálně spíš 60–75 %. |
 
-      Dlaždice se proto už nezadávají ručně — výnos i zhodnocení se počítají
-      z bloku `kalkulacka`, takže se s kalkulačkou nemohou rozejít. Samostatně
-      zůstává jen `hodnota_po_dokonceni_min/max`, kterou z provozního modelu
-      odvodit nelze. Když vyjde nižší než cena + CAPEX, web sám zobrazí
-      upozornění, že projekt v tom modelu končí ve ztrátě.
-      Doplnit je potřeba reálný odhad hodnoty a reálné parametry provozu.
-- [ ] **Výchozí parametry kalkulačky** — blok `kalkulacka`. Řídí i dlaždice nad
-      kalkulačkou, takže na nich teď záleží dvojnásob. Ověřit zvlášť
-      `pocet_jednotek` (20), `adr` (2 500 Kč) a `opex_pct` (35 %, na ubytovací
-      provoz nízké — nezahrnuje personál, energie, úklid ani provize portálů).
-      CAPEX schválně zůstává 0: dokud se nedoplní, kalkulačka i dlaždice místo
-      výnosu ukážou „—“ a vysvětlí proč.
+      Při výchozích hodnotách vycházel čistý zisk 5,9 mil. ročně proti kupní ceně
+      7,9 mil., tedy návratnost 16 měsíců. Proto se provozní model už neukazuje
+      jako headline — je jen v kalkulačce, kde si ho návštěvník zadá sám.
+- [ ] **Odhad hodnoty po dokončení** — `model_vynosu.hodnota_po_dokonceni_min/max`
+      (15–18 mil.). Neověřeno, převzato z původního webu. Řídí dlaždici „Rozdíl,
+      ze kterého se hradí dokončení“ (dnes 7,1–10,1 mil.), což je pro kupujícího
+      klíčové číslo. Ideálně podložit oceněním.
 - [ ] **Prodávající** — web uvádí PTF Reality, s.r.o., IČO 06684394 (Plzeň).
       Sesterský projekt prodává PTF reality PRAHA s.r.o., IČO 07666969.
       Zkontrolovat, která entita prodává tenhle projekt.
