@@ -347,32 +347,42 @@ def formular(zajem="Koupě celého projektu"):
 
 
 def model_dlazdice():
-    """Tři čísla, která stojí jen na kupní ceně a na odhadu hodnoty po dokončení.
+    """Investiční sekce. Odhad hodnoty po dokončení je pod stejnou pojistkou
+    jako PENB: dokud v datech není, netvrdí web žádnou hodnotu a ukazuje jen
+    to, co je jisté. Jakmile se doplní, přibude i dlaždice s rozdílem, ze
+    kterého se hradí dostavba."""
+    h_min, h_max = M.get("hodnota_po_dokonceni_min"), M.get("hodnota_po_dokonceni_max")
 
-    Dřív tu byl modelový roční výnos z provozu. Ten ale stojí na počtu jednotek,
-    ceně za noc a obsazenosti — samá neověřená čísla. Při výchozím nastavení
-    vycházel čistý zisk 5,9 mil. ročně proti kupní ceně 7,9 mil., tedy návratnost
-    16 měsíců. Provozní model proto zůstal jen v kalkulačce, kde si ho návštěvník
-    zadá sám a vidí, z čeho vzešel."""
-    h_min, h_max = M["hodnota_po_dokonceni_min"], M["hodnota_po_dokonceni_max"]
-    r_min, r_max = h_min - P["cena"], h_max - P["cena"]
+    if h_min and h_max:
+        r_min, r_max = h_min - P["cena"], h_max - P["cena"]
+        polozky = [
+            (czk(P["cena"]), "Kupní cena projektu ve stavu hrubé stavby"),
+            (f"{mil(h_min).replace(' mil.', '')}–{mil(h_max)}", "Odhad hodnoty po dokončení"),
+            (f"{mil(r_min).replace(' mil.', '')}–{mil(r_max)}", "Rozdíl, ze kterého se hradí dokončení"),
+        ]
+        vysvetleni = ("<strong>Jak to číst.</strong> Rozdíl mezi kupní cenou a odhadovanou "
+                      "hodnotou po dokončení je rozpočet na dostavbu. Pokud dokončení vyjde "
+                      f"levněji, je rozdíl ziskem; pokud dráž, projekt se do odhadu nevejde. "
+                      f"{esc(M['disclaimer'])}")
+    else:
+        polozky = [
+            (czk(P["cena"]), "Kupní cena celého projektu"),
+            ("Platné", "Stavební povolení a projektová dokumentace v ceně"),
+            ("Na místě", "Materiál na dokončení hrubé stavby v ceně"),
+        ]
+        vysvetleni = ("<strong>Kolik projekt vynese.</strong> Záleží na nákladech dokončení "
+                      "a na tom, jak se objekt bude provozovat. Propočet si můžete udělat "
+                      "v kalkulačce podle vlastních čísel — my na webu žádný výnos netvrdíme, "
+                      "dokud není podložený.")
 
-    polozky = [
-        (czk(P["cena"]), "Kupní cena projektu ve stavu hrubé stavby"),
-        (f"{mil(h_min).replace(' mil.', '')}–{mil(h_max)}", "Odhad hodnoty po dokončení"),
-        (f"{mil(r_min).replace(' mil.', '')}–{mil(r_max)}", "Rozdíl, ze kterého se hradí dokončení"),
-    ]
     karty = "".join(
         f'<div class="card"><b style="display:block;font:500 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--serif);'
         f'letter-spacing:-.02em;color:var(--brand)">{c}</b>'
         f'<p style="margin-top:12px">{p_}</p></div>'
         for c, p_ in polozky
     )
-    return f"""<div class="grid grid--3">{karty}</div>
-<div class="note mt">{ico('info', 'ico ico--sm')}<div><strong>Jak to číst.</strong>
-  Rozdíl mezi kupní cenou a odhadovanou hodnotou po dokončení je rozpočet na dostavbu.
-  Pokud dokončení vyjde levněji, je rozdíl ziskem; pokud dráž, projekt se do odhadu
-  nevejde. {esc(M['disclaimer'])}</div></div>"""
+    return (f'<div class="grid grid--3">{karty}</div>\n'
+            f'<div class="note mt">{ico("info", "ico ico--sm")}<div>{vysvetleni}</div></div>')
 
 
 # ---------------------------------------------------------------- stránky

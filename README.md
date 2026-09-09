@@ -77,10 +77,16 @@ co ještě čeká na doplnění.
       Při výchozích hodnotách vycházel čistý zisk 5,9 mil. ročně proti kupní ceně
       7,9 mil., tedy návratnost 16 měsíců. Proto se provozní model už neukazuje
       jako headline — je jen v kalkulačce, kde si ho návštěvník zadá sám.
-- [ ] **Odhad hodnoty po dokončení** — `model_vynosu.hodnota_po_dokonceni_min/max`
-      (15–18 mil.). Neověřeno, převzato z původního webu. Řídí dlaždici „Rozdíl,
-      ze kterého se hradí dokončení“ (dnes 7,1–10,1 mil.), což je pro kupujícího
-      klíčové číslo. Ideálně podložit oceněním.
+- [ ] **Odhad hodnoty po dokončení — dnes se nezveřejňuje.**
+      Původní web tvrdil 15–18 mil. Nepodařilo se to doložit a proti vašim
+      vlastním cenám to nesedí: Apartmány Avionika v téže obci prodávají
+      15 dokončených jednotek o 392 m² za 34,95 mil., tedy 89 252 Kč/m².
+      Při té hladině by 15–18 mil. odpovídalo jen 168–202 m² prodejné plochy,
+      zhruba čtyřem bytům — zatímco kalkulačka počítá s dvaceti jednotkami.
+      Klíče `hodnota_po_dokonceni_min/max` jsou proto `null` a sekce zatím
+      ukazuje jen ověřená fakta. Jakmile vyplníte obě čísla, web sám přidá
+      dlaždici s hodnotou i s rozdílem, ze kterého se hradí dostavba.
+      K doložení stačí buď ocenění, nebo prodejní ceník jednotek Aviatiky.
 - [ ] **Prodávající** — web uvádí PTF Reality, s.r.o., IČO 06684394 (Plzeň).
       Sesterský projekt prodává PTF reality PRAHA s.r.o., IČO 07666969.
       Zkontrolovat, která entita prodává tenhle projekt.

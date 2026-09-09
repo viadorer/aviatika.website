@@ -63,12 +63,11 @@
     "rozsiritelnost": "Projekt je rozšiřitelný o další fáze výstavby."
   },
   "model_vynosu": {
-    "_upozorneni": "MODELOVÁ ČÍSLA — nejde o zaručený ani nabízený výnos.",
-    "_odvozeni": "Dlaždice stojí jen na kupní ceně a na odhadu hodnoty po dokončení. Provozní model (jednotky, cena za noc, obsazenost) je výhradně v kalkulačce, kde si ho návštěvník zadá sám — jako headline se neukazuje, protože stojí na neověřených číslech.",
-    "hodnota_po_dokonceni_min": 15000000,
-    "hodnota_po_dokonceni_max": 18000000,
-    "_hodnota_poznamka": "NEOVĚŘENO, převzato z původního webu. Musí být vyšší než cena + CAPEX, jinak projekt vychází ztrátově. Při CAPEX 17 mil. je investice 24,9 mil., tedy o 7–10 mil. nad touto hodnotou.",
-    "disclaimer": "Odhad hodnoty po dokončení je kvalifikovaný odhad, ne ocenění znalcem. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, kvalitě provedení, obsazenosti a cenové hladině v době prodeje nebo pronájmu."
+    "_navod": "Až bude odhad hodnoty po dokončení podložený, vyplňte obě čísla a web sám přidá dlaždici s hodnotou i s rozdílem, ze kterého se hradí dostavba. Dokud jsou null, sekce ukazuje jen ověřená fakta a žádnou hodnotu netvrdí.",
+    "hodnota_po_dokonceni_min": null,
+    "hodnota_po_dokonceni_max": null,
+    "_proc_odstraneno": "Původní web uváděl 15–18 mil. Při cenách dokončených apartmánů v Kovářské (Apartmány Avionika, stejný prodejce: 15 jednotek, 392 m², 89 252 Kč/m²) by 15–18 mil. odpovídalo jen 168–202 m² prodejné plochy, tedy zhruba čtyřem bytům. Kalkulačka přitom počítá s dvaceti jednotkami. Číslo se nepodařilo doložit, proto se nezveřejňuje.",
+    "disclaimer": "Odhad hodnoty po dokončení je kvalifikovaný odhad, ne ocenění znalcem. Nejde o nabídku, příslib ani záruku výnosu. Skutečný výsledek závisí na nákladech dokončení, kvalitě provedení a cenové hladině v době prodeje."
   },
   "kalkulacka": {
     "_upozorneni": "Výchozí parametry kalkulačky. Sazby a obsazenost ověřit před spuštěním webu.",
